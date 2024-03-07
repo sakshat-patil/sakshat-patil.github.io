@@ -62,7 +62,7 @@ export class HumanAnimationComponent implements AfterViewInit {
   createHuman(): void {
     const loader = new GLTFLoader();
     var scene = this.scene;
-    loader.load( '/assets/Man.glb', ( gltf ) => {
+    loader.load( '/assets/Boy.glb', ( gltf ) => {
       gltf.scene.scale.setScalar(this.size);
       gltf.scene.position.set(this.position[0], this.position[1], this.position[2]);
       const animations = gltf.animations
@@ -76,30 +76,9 @@ export class HumanAnimationComponent implements AfterViewInit {
 	  console.error( error );
 } );
   this.scene = scene;
-  this.ambientLight = new THREE.AmbientLight(0xffffff, 4);
+  this.ambientLight = new THREE.AmbientLight(0xffffff, 3);
   this.scene.add(this.ambientLight);
   }
-
-  // createHumanFbx(): void{
-  //   const loader = new FBXLoader();
-  //   loader.load( '/assets/AllAnimations.fbx', ( fbx ) => {
-  //     fbx.scale.set(0.03,0.03,0.03);
-  //     fbx.position.set(0,-2.5,0);
-  //     this.abcMixer = new THREE.AnimationMixer( fbx );
-  //     const clips = fbx.animations;
-  //     const clip = THREE.AnimationClip.findByName( clips, 'mixamo.com' );
-  //     const action = this.abcMixer.clipAction( clip );
-  //     action.setLoop(THREE.LoopOnce, 1);
-  //     action.play();
-  //     this.scene.add(fbx);
-
-  //   }, undefined, function ( error ) {
-  //     console.error( error );
-  //   } );
-  // this.ambientLight = new THREE.AmbientLight(0xffffff, 4);
-  // this.scene.add(this.ambientLight);
-  // console.log(this.scene);
-  // }
 
   private createControls = () => {
     const renderer = new CSS2DRenderer();
@@ -108,7 +87,7 @@ export class HumanAnimationComponent implements AfterViewInit {
     renderer.domElement.style.top = '0px';
     document.body.appendChild(renderer.domElement);
     this.controls = new OrbitControls(this.camera, renderer.domElement);
-    this.controls.autoRotate = false;
+    this.controls.autoRotate = true;
     this.controls.enableZoom = false;
     this.controls.enablePan = false;
 

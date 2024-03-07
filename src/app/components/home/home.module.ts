@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { BannerComponent } from './banner/banner.component';
 import { ContactComponent } from './contact/contact.component';
@@ -36,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient){
   imports: [
     CommonModule,
     NgbNavModule,
+    HttpClientModule,
     CarouselModule,
     TranslateModule.forChild({
       loader: {

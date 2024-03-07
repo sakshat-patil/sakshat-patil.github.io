@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 
 import {trigger, state, style, animate, transition, keyframes, stagger, query } from "@angular/animations"
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-banner',
@@ -20,14 +21,22 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
   ]
 })
 export class BannerComponent implements OnInit {
-
   
+  constants: Object = {};
 
   constructor(
-    public analyticsService: AnalyticsService
+    public analyticsService: AnalyticsService,
+    private http: HttpClient
   ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    this.fetchData().subscribe(data => {
+      this.constants = data["Banner"];
+    });
+  }
+  
+  fetchData() {
+    return this.http.get<any>('../assets/i18n/constants.json');
   }
   
 

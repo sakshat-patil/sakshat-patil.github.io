@@ -4,6 +4,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-human-animation',
@@ -31,15 +33,13 @@ export class HumanAnimationComponent implements AfterViewInit {
     map: this.loader.load(this.texture_blue),
   });
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngAfterViewInit(): void {
     this.initThree();
     this.createHuman();
     this.createControls();
     this.animate();
-
-    //window.addEventListener('scroll', () => this.onWindowScroll());
   }
 
   initThree(): void {
@@ -51,7 +51,7 @@ export class HumanAnimationComponent implements AfterViewInit {
 
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x0a192f);
-    const cameraZ: number = 50;
+    const cameraZ: number = 60;
     const fieldOfView: number = 1;
     const nearClippingPane: number = 0.1;
     const farClippingPane: number = 1000;
@@ -81,12 +81,14 @@ export class HumanAnimationComponent implements AfterViewInit {
   }
 
   private createControls = () => {
-    const renderer = new CSS2DRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.domElement.style.position = 'absolute';
-    renderer.domElement.style.top = '0px';
-    document.body.appendChild(renderer.domElement);
-    this.controls = new OrbitControls(this.camera, renderer.domElement);
+    // const renderer = new CSS2DRenderer();
+    // renderer.setSize(window.innerWidth, window.innerHeight);
+    // renderer.domElement.style.position = 'absolute';
+    // renderer.domElement.style.top = '0px';
+    // document.body.appendChild(renderer.domElement);
+    const rendererElement = this.renderer.domElement;
+
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.autoRotate = true;
     this.controls.enableZoom = false;
     this.controls.enablePan = false;
@@ -94,6 +96,10 @@ export class HumanAnimationComponent implements AfterViewInit {
     // Restrict vertical rotation (along the y-axis)
     this.controls.minPolarAngle = Math.PI / 2; // Minimum angle (90 degrees)
     this.controls.maxPolarAngle = Math.PI / 2; // Maximum angle (90 degrees)
+
+    // Restrict horizontal rotation
+    this.controls.minAzimuthAngle = -Math.PI / 6; // Minimum azimuth angle (-30 degrees)
+    this.controls.maxAzimuthAngle = Math.PI / 6; // Maximum azimuth angle (30 degrees)
 
     this.controls.update();
 };
@@ -105,16 +111,8 @@ export class HumanAnimationComponent implements AfterViewInit {
       this.abcMixer.update(delta);
     }
     //this.body.rotation.y += 0.05;
-    //this.scene.children[1].rotation.y += 0.2;
+    //this.scene.children[1].rotation.y += 0.01;
     //this.scene.children[1].rotation.y += 0.02;
     this.renderer.render(this.scene, this.camera);
-  }
-
-  onWindowScroll(): void {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Adjust human position based on scroll
-    this.body.position.y = -scrollTop / 100;
-
   }
 }

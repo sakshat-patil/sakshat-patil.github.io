@@ -46,8 +46,8 @@ export class HumanAnimationComponent implements AfterViewInit {
     const canvas = this.humanCanvasRef.nativeElement;
 
     this.renderer = new THREE.WebGLRenderer({ canvas });
+    this.renderer.shadowMap.enabled = true;
     this.renderer.setSize(400, 300); // Set canvas size
-    this.renderer.setClearColor(0xffffff, 1);
 
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x0a192f);
@@ -56,36 +56,64 @@ export class HumanAnimationComponent implements AfterViewInit {
     const nearClippingPane: number = 0.1;
     const farClippingPane: number = 1000;
     this.camera = new THREE.PerspectiveCamera(cameraZ, fieldOfView, nearClippingPane, farClippingPane);
+    
     this.camera.position.set(5, 0, 5);
+
+    // Floor
+    let floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
+    let floorMaterial = new THREE.ShadowMaterial({
+      opacity: 1, 
+    });
+
+    let floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    floor.rotation.x = -0.5 * Math.PI; // This is 90 degrees by the way
+    floor.receiveShadow = true;
+    floor.position.y = -2.5;
+    this.scene.add(floor);
   }
 
   createHuman(): void {
     const loader = new GLTFLoader();
-    var scene = this.scene;
     loader.load( '/assets/Boy.glb', ( gltf ) => {
       gltf.scene.scale.setScalar(this.size);
-      gltf.scene.position.set(this.position[0], this.position[1], this.position[2]);
+      gltf.scene.position.set(0, this.position[1], 0);
       const animations = gltf.animations
       this.abcMixer = new THREE.AnimationMixer(gltf.scene)
-      const dancing = this.animationName;
-      const clip = THREE.AnimationClip.findByName( animations, dancing );
+      const name = this.animationName;
+      const clip = THREE.AnimationClip.findByName( animations, name );
       this.abcMixer.clipAction(clip).play()
-      scene.add( gltf.scene );
+      this.scene.add( gltf.scene );
+
+      gltf.scene.traverse((child) => {
+        console.log(child);
+        if (child.isObject3D) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+
     }, undefined, function ( error ) {
 
 	  console.error( error );
 } );
-  this.scene = scene;
-  this.ambientLight = new THREE.AmbientLight(0xffffff, 3);
+
+  // Setup lighting
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 40);
+  directionalLight.position.set(0, 2, 4);
+  directionalLight.castShadow = true;
+  this.scene.add(directionalLight);
+
+    // Adjust shadow settings
+    directionalLight.shadow.mapSize.width = 500;
+    directionalLight.shadow.mapSize.height = 500;
+    directionalLight.shadow.camera.near = 0.5;
+    directionalLight.shadow.camera.far = 50;
+
+  this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
   this.scene.add(this.ambientLight);
   }
 
   private createControls = () => {
-    // const renderer = new CSS2DRenderer();
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    // renderer.domElement.style.position = 'absolute';
-    // renderer.domElement.style.top = '0px';
-    // document.body.appendChild(renderer.domElement);
     const rendererElement = this.renderer.domElement;
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -98,8 +126,8 @@ export class HumanAnimationComponent implements AfterViewInit {
     this.controls.maxPolarAngle = Math.PI / 2; // Maximum angle (90 degrees)
 
     // Restrict horizontal rotation
-    this.controls.minAzimuthAngle = -Math.PI / 6; // Minimum azimuth angle (-30 degrees)
-    this.controls.maxAzimuthAngle = Math.PI / 6; // Maximum azimuth angle (30 degrees)
+    this.controls.minAzimuthAngle = -Math.PI / 4; // Minimum azimuth angle (-30 degrees)
+    this.controls.maxAzimuthAngle = Math.PI / 4; // Maximum azimuth angle (30 degrees)
 
     this.controls.update();
 };

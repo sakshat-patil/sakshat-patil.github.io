@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
@@ -20,21 +21,27 @@ export class ProyectsComponent implements OnInit {
     autoplayTimeout:3000
   }
 
+  constants: Object = {};
+
   @ViewChild('imgContainer') imgContainer: ElementRef;
 
 
   constructor(
-    public analyticsService: AnalyticsService
+    public analyticsService: AnalyticsService,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
+    this.fetchData().subscribe(data => {
+      this.constants = data["FeatureProjects"];
+    });
+  }
 
-
-
+  fetchData() {
+    return this.http.get<any>('../assets/i18n/constants.json');
   }
 
 debug(){
-
   this.imgContainer.nativeElement.scroll({
     top: this.imgContainer.nativeElement.scrollHeight,
     left: 0,

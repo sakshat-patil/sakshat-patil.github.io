@@ -4,7 +4,7 @@
             <div class="content">
                 <div>
                     <!-- <h1>{{ constants["BannerTitle"] }}</h1> -->
-                    <h1>{{"Banner.Pretitle" | translate}}</h1>
+                    <h1>{{constants['Pretitle']}}</h1>
                 </div>
                 <div style="display: flex; justify-content: space-evenly; flex-direction: row;">
                     <div>
@@ -13,7 +13,7 @@
                             <h3>Full Stack Developer</h3>
                         </div>
                         <div class='banner-description'>
-                            <p [innerHTML]='"Banner.Description" | translate' class="mt-4"></p>
+                            <p [innerHTML]='constants["Description"]' class="mt-4"></p>
                         </div>
                     </div>
                     <app-human-animation [animationName] = "'idle'" [size] = '3' [position]="[-2,-2.5,0]"></app-human-animation>
@@ -21,7 +21,7 @@
             </div>
             <div class="div-btn-banner">
                 <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "banner", "email")' href="mailto:andresjosehr@gmail.com" target="_black" class="main-btn">
-                    {{"Banner.ActionBtn" | translate}}
+                    {{constants['ActionBtn']}}
                 </a>
             </div>
         </div>

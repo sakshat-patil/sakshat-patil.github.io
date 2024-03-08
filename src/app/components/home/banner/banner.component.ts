@@ -38,6 +38,4 @@ export class BannerComponent implements OnInit {
   fetchData() {
     return this.http.get<any>('../assets/i18n/constants.json');
   }
-  
-
 }

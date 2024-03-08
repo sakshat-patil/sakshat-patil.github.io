@@ -2,10 +2,8 @@ import { Component, OnInit, ViewChild, HostListener, AfterViewInit } from '@angu
 import { Router } from '@angular/router';
 import {trigger, style, query, transition, stagger, animate } from '@angular/animations'
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
-import { TranslateService } from '@ngx-translate/core';
 import { FormControl } from '@angular/forms';
-import { LanguageService } from 'src/app/services/language/language.service';
-import { ThisReceiver } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -32,23 +30,25 @@ import { ThisReceiver } from '@angular/compiler';
 
 export class HeaderComponent implements OnInit {
 
+  constants: Object = {};
   responsiveMenuVisible: Boolean = false;
   pageYPosition: number;
-  languageFormControl: FormControl= new FormControl();
   cvName: string = "";
 
   constructor(
     private router: Router,
     public analyticsService: AnalyticsService,
-    public languageService: LanguageService
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
-
-    this.languageFormControl.valueChanges.subscribe(val => this.languageService.changeLanguage(val))
-
-    this.languageFormControl.setValue(this.languageService.language)
-
+    this.fetchData().subscribe(data => {
+      this.constants = data["Header"];
+    });
+  }
+ 
+  fetchData() {
+    return this.http.get<any>('../assets/i18n/constants.json');
   }
 
   scroll(el) {
@@ -61,24 +61,15 @@ export class HeaderComponent implements OnInit {
   }
 
   downloadCV(){
-    this.languageService.translateService.get("Header.cvName").subscribe(val => {
-      this.cvName = val
-      console.log(val)
+      this.cvName = this.constants["cvName"];
       // app url
       let url = window.location.href;
-
       // Open a new window with the CV
       window.open(url + "/../assets/cv/" + this.cvName, "_blank");
-    })
-
   }
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])
     getScrollPosition(event) {
         this.pageYPosition=window.pageYOffset
-    }
-
-    changeLanguage(language: string) {
-      this.languageFormControl.setValue(language);
     }
 }

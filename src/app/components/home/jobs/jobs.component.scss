@@ -15,15 +15,15 @@
     }
 
     a.active{
-        background-color: $LightNavy !important;
-        color: $Green !important;
+        background-color: var(--second-background-color) !important;
+        color: var(--background-color-after) !important;
         border-color: transparent !important;
         border-radius: 0px;
     }
     
     a:hover{
-        background-color: $LightNavy !important;
-        color: $Green !important;
+        background-color: var(--second-background-color) !important;
+        color: var(--background-color-after) !important;
         border-color: transparent !important;
         border-radius: 0px;
     }
@@ -57,11 +57,11 @@
         white-space: nowrap;
         font-family: $CodeFont;
         font-size: 13px;
-        color: $Slate;
+        color: var(--secondary-color);
     }
 
     li{
-        border-left: 2px solid $LightestNavy;
+        border-left: 2px solid var(--third-background-color);
         border-left-width: 2px;
         border-left-style: solid;
         border-left-color: rgb(48, 60, 85);
@@ -74,13 +74,13 @@
     margin: auto;
 
     .title-tab-content{
-        color: $LightestSlate;
+        color: var(--fourth-color);
         font-size: 22px;
         font-weight: 500;
         margin-bottom: 5px;
 
         .company-tab-content{
-            color: $Green;
+            color: var(--background-color-after);
         }
     }
 
@@ -92,7 +92,7 @@
         -moz-letter-spacing: 0.05em;
         -ms-letter-spacing: 0.05em;
         letter-spacing: 0.05em;
-        color: $LightSlate;
+        color: var(--third-color);
         margin-bottom: 30px;
     }
     
@@ -106,7 +106,7 @@
             content: '▹';
             position: absolute;
             left: 0;
-            color: $Green;
+            color: var(--background-color-after);
         }
     }
 }

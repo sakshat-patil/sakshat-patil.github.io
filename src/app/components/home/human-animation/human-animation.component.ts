@@ -45,12 +45,13 @@ export class HumanAnimationComponent implements AfterViewInit {
   initThree(): void {
     const canvas = this.humanCanvasRef.nativeElement;
 
-    this.renderer = new THREE.WebGLRenderer({ canvas });
+    this.renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
     this.renderer.shadowMap.enabled = true;
     this.renderer.setSize(400, 300); // Set canvas size
 
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x0a192f);
+    this.scene.background = null;
+    //this.scene.background = new THREE.Color(0x0a192f);
     const cameraZ: number = 60;
     const fieldOfView: number = 1;
     const nearClippingPane: number = 0.1;
@@ -85,7 +86,6 @@ export class HumanAnimationComponent implements AfterViewInit {
       this.scene.add( gltf.scene );
 
       gltf.scene.traverse((child) => {
-        console.log(child);
         if (child.isObject3D) {
           child.castShadow = true;
           child.receiveShadow = true;

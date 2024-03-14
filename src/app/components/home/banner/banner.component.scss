@@ -18,7 +18,7 @@
 
             h1{
     
-                color: #64ffda;
+                color: var(--background-color-after);
                 margin: 0 0 20px 3px;
                 font-size: 16px;
                 font-weight: normal;
@@ -34,10 +34,10 @@
             }
 
             h2{
-                color: $LightestSlate;
+                color: var(--fourth-color);
             }
             h3{  
-                color: $Slate;
+                color: var(--secondary-color);
             }
 
             .banner-description{

@@ -4,6 +4,8 @@ import {trigger, style, query, transition, stagger, animate } from '@angular/ani
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ThemingService } from 'src/app/services/theming/theming.service';
+import { Theme } from 'src/app/theme';
 
 
 @Component({
@@ -34,11 +36,14 @@ export class HeaderComponent implements OnInit {
   responsiveMenuVisible: Boolean = false;
   pageYPosition: number;
   cvName: string = "";
+  private _themes = Object.values(Theme);
+  themeType = 0;
 
   constructor(
     private router: Router,
     public analyticsService: AnalyticsService,
-    private http: HttpClient
+    private http: HttpClient,
+    private themingService: ThemingService
   ) { }
 
   ngOnInit(): void {
@@ -66,6 +71,11 @@ export class HeaderComponent implements OnInit {
       let url = window.location.href;
       // Open a new window with the CV
       window.open(url + "/../assets/cv/" + this.cvName, "_blank");
+  }
+
+  public setNextTheme(themeType: number): void {
+    this.themeType = themeType;
+    this.themingService.setTheme(this._themes[this.themeType]);
   }
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])

@@ -226,6 +226,7 @@
 .flag-text {
     color: inherit;
     font-size: 13px;
+    color: var(--fourth-color) !important;
     font-family: $CodeFont;
 }
 
@@ -236,7 +237,6 @@
 }
 
 .language-container {
-    padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 4px;
     background: var(--background-color);

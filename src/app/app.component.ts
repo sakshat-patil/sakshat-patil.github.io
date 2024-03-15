@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
     }
   ngOnInit(): void{
 
-    this.titleService.setTitle( "Gaurav Khatwani | Full Stack Developer" );
+    this.titleService.setTitle( "Gaurav Khatwani | Software Developer" );
 
     this.metaService.addTags([
       {name: 'keywords', content: 'Frontend, software, developer'},

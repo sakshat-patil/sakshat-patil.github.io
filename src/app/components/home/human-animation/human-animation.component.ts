@@ -91,7 +91,7 @@ export class HumanAnimationComponent implements AfterViewInit {
           child.receiveShadow = true;
         }
       });
-
+      this.onModelLoaded();
     }, undefined, function ( error ) {
 
 	  console.error( error );
@@ -111,6 +111,11 @@ export class HumanAnimationComponent implements AfterViewInit {
 
   this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
   this.scene.add(this.ambientLight);
+  }
+
+  onModelLoaded(): void {
+    console.log('Model loaded');
+    // Perform any actions you need to take when the model is fully loaded
   }
 
   private createControls = () => {

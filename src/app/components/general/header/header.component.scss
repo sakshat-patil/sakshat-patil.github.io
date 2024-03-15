@@ -240,7 +240,6 @@
     padding-right: 16px;
     padding-bottom: 4px;
     background: var(--background-color);
-    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -290,7 +289,6 @@
 
 ::ng-deep .dropdown-menu.show {
     padding: 0 !important;
-    border-radius: 7px !important;
     background: var(--fourth-color) !important;
     margin-top: 10px !important;
     left: 20px !important;

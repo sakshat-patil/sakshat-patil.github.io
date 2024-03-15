@@ -40,3 +40,15 @@ $night-theme: (
   --background-color-after: $Green,
   --background-color-after-opacity: $GreenOpacity,
 );
+
+$green-theme: (
+  --primary-color: purple,            // Primary color (dark gray)
+  --secondary-color: #95d5b2,          // Secondary color (medium gray)
+  --third-color: #b7e4c7,              // Tertiary color (light gray)
+  --fourth-color: #d8f3dc,           // Quaternary color (lighter gray)
+  --background-color: #1b4332,         // Background color (white)
+  --second-background-color: #295f47,  // Second background color (light gray)
+  --third-background-color: #52b788,   // Third background color (lighter gray)
+  --background-color-after: white,   // Background color after (blue)
+  --background-color-after-opacity: 0.1, // Background color after opacity
+);

@@ -7,3 +7,6 @@
 :root.night-theme {
   @include spread-map($night-theme);
 }
+:root.green-theme {
+  @include spread-map($green-theme);
+}

@@ -87,108 +87,58 @@
         "Title": "My projects",
         "Label": "Featured Project",
         "Projects": [{
-                "Title": "Agrourbana",
+                "Title": "Book My Turf",
                 "Description": "Monitoring application made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, and <span class='underline'>user management</span>. It also has feedback form logic for parameter configuration.",
                 "imgs": [
-                    "assets/images/agrourbana/agrourbana1.png",
-                    "assets/images/agrourbana/agrourbana2.png",
-                    "assets/images/agrourbana/agrourbana3.png",
-                    "assets/images/agrourbana/agrourbana4.png",
-                    "assets/images/agrourbana/agrourbana5.png"
+                    "assets/images/BookMyTurf/BookMyTurf-login.png",
+                    "assets/images/BookMyTurf/BookMyTurf-home.png"
                 ],
-                "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+                "Technologies": ["Flutter", "Dart", "Firebase"]
             },
             {
-                "Title": "Tu super plan",
+                "Title": "VisuallyPaired",
                 "Description": "Health plan quote that has a search engine with which advanced queries are made. Plans are displayed based on the user's age, monthly income, and location. It has <span class='underline'>online chat</span, <span class='underline'>contact form</span>, <span class='underline'>notification system by whatsapp and mail</span>, <span class='underline'>auth</span>, and <span class='underline'>internet information management through the role of administrator.</span>",
                 "imgs": [
-                    "assets/images/tusuperplan/tusuperplan1.png",
-                    "assets/images/tusuperplan/tusuperplan2.png",
-                    "assets/images/tusuperplan/tusuperplan3.png",
-                    "assets/images/tusuperplan/tusuperplan4.png",
-                    "assets/images/tusuperplan/tusuperplan5.png"
+                    "assets/images/VisuallyPaired/VisuallyPaired-home.png",
+                    "assets/images/VisuallyPaired/VisuallyPaired-call.png",
+                    "assets/images/VisuallyPaired/VisuallyPaired-message.png",
+                    "assets/images/VisuallyPaired/VisuallyPaired-currency.png",
+                    "assets/images/VisuallyPaired/VisuallyPaired-calculate.png"
                 ],
-                "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
-            },
-            {
-                "Title": "Proyexiot",
-                "Description": "Data monitoring platform belonging to water wells, tugboats, and various installations made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, <span class='underline'>user management</span>, and <span class='underline'>geolocation with openlayers.</span>",
-                "imgs": [
-                    "assets/images/proyex/proyex1.png",
-                    "assets/images/proyex/proyex2.png",
-                    "assets/images/proyex/proyex3.png",
-                    "assets/images/proyex/proyex4.png",
-                    "assets/images/proyex/proyex5.png",
-                    "assets/images/proyex/proyex6.png",
-                    "assets/images/proyex/proyex7.png",
-                    "assets/images/proyex/proyex8.png",
-                    "assets/images/proyex/proyex9.png",
-                    "assets/images/proyex/proyex10.png",
-                    "assets/images/proyex/proyex11.png",
-                    "assets/images/proyex/proyex12.png"
-                ],
-                "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
-            },
-            {
-                "Title": "Hands game",
-                "Description": "The rock-paper-scissors game extended. A personal project developed in angular in which you play randomly against the machine. It has the use of services, interfaces, and components.",
-                "imgs": ["assets/images/hands-game.png"],
-                "ghLink": "https://github.com/andresjosehr/hands-game",
-                "demoLink": "https://projects.andresjosehr.com/hands-game",
-                "Technologies": ["Angular", "CSS GRID", "SASS", "Angular animations"]
-            },
-            {
-                "Title": "Countries viewer",
-                "Description": "An interface that consumes an API of countries with which you can view a list of countries, see details of each country, filter by name and region. It also has a dark mode to switch between dark and light themes.",
-                "imgs": ["assets/images/countries-viewer.png"],
-                "ghLink": "https://github.com/andresjosehr/countries-viewer",
-                "demoLink": "https://projects.andresjosehr.com/countries-viewer",
-                "Technologies": ["Angular", "RxJS", "SASS", "API"]
+                "Technologies": ["Flutter", "Dart", "Firebase", "Alan AI", "ML"]
             }]
         },
     "OtherProjects":{
         "Title": "More projects",
         "Projects": [{
-                "Title": "Pokemon",
-                "Description": "Pokemon search engine that uses the pokeapi. Object-oriented programming was used to organize the information of the pokemons along with their respective image.",
-                "ghLink": "https://github.com/andresjosehr/pokemon-angular",
-                "demoLink": "https://projects.andresjosehr.com/pokemon-list",
-                "Technologies": ["Angular", "RxJs", "API", "Bootstrap"]
+                "Title": "SkillGrader",
+                "Description": "The educational platform facilitates university teachers in uploading lecture recordings, tests, and grading student submissions. Students can access the recordings, prepare for tests, and submit their assignments, earning credits based on their grades to fulfill course completion requirements.",
+                "ghLink": "https://github.com/gaurav148/SkillGrader",
+                "Technologies": ["NodeJS", "Express", "MySQL", "HTML", "CSS"]
             },
             {
-                "Title": "Coming soon page",
-                "Description": "Personal project of a two-column split page to be used as a 'Coming soon page'. Scheduled to be a fully responsive design. It has a form field to subscribe by email.",
-                "ghLink": "https://github.com/andresjosehr/coming-soon-page",
-                "demoLink": "https://projects.andresjosehr.com/coming-soon-page",
-                "Technologies": ["Angular", "SASS", "CSS GRID", "Reactive form"]
+                "Title": "Caption Generator",
+                "Description": "The website enables users to upload pictures and automatically generates captions using various NLP techniques, including tokenization, stop words removal, and next word prediction. ",
+                "ghLink": "https://github.com/gaurav148/Caption-Generator",
+                "Technologies": ["HTML", "CSS", "NLP", "Machine Learning"]
             },
             {
-                "Title": "Four card feature section",
-                "Description": "A single page that has a minimal design, listing four features on four cards. Input animations are done with angular animations.",
-                "ghLink": "https://github.com/andresjosehr/fourd-card-feature-section",
-                "demoLink": "https://projects.andresjosehr.com/four-card-feature-section",
-                "Technologies": ["Angular", "SASS", "CSS GRID"]
+                "Title": "QTalk",
+                "Description": "The social chat app enables users to communicate using various media, with a child-lock feature to prevent sharing inappropriate content and discourage offensive language. Additionally, it offers advanced features such as a fake news detector and text extraction from images.",
+                "ghLink": "https://github.com/gaurav148/QTalk",
+                "Technologies": ["Flutter", "Dart", "Firebase", "ML"]
             },
             {
-                "Title": "Social proof section",
-                "Description": "Personal project of a page designed from a Figma layout. Angular was used for development together with SASS and CSS GRID.",
-                "ghLink": "https://github.com/andresjosehr/social-proof-section",
-                "demoLink": "https://projects.andresjosehr.com/social-proof-section",
-                "Technologies": ["Angular", "CSS GRID", "GIT"]
+                "Title": "StudySmart GRE",
+                "Description": "A GRE website which offers flashcards and quizzes to help students improve their verbal and math skills. It provides customized study materials to prepare for the exam effectively.",
+                "ghLink": "https://github.com/gaurav148/gre",
+                "Technologies": ["Python", "Flask", "PostgreSQL", "HTML", "CSS"]
             },
             {
-                "Title": "FAQ accordion card",
-                "Description": "FAQ accordion with logic and animations made in Angular.",
-                "ghLink": "https://github.com/andresjosehr/faq-accordion",
-                "demoLink": "https://proyectos.andresjosehr.com/faq-accordion",
-                "Technologies": ["Angular", "CSS GRID", "Angular animations"]
-            },
-            {
-                "Title": "Profile card",
-                "Description": "Simple one-page design that features a profile letter with basic information about a person.",
-                "ghLink": "https://github.com/andresjosehr/profile-card-component",
-                "demoLink": "https://proyectos.andresjosehr.com/profile-card-component",
-                "Technologies": ["Angular", "SASS", "GIT"]
+                "Title": "Blogify Hub",
+                "Description": "A blog platform where users can authenticate, create their own blogs, and explore content written by others. Users have the flexibility to include pictures, emojis, and text in their blog posts.",
+                "ghLink": "https://github.com/gaurav148/DjangoProject",
+                "Technologies": ["Python", "Django", "MySQL", "HTML", "CSS"]
             }]
         },
     "Contact":{

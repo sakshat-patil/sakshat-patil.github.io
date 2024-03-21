@@ -2,11 +2,11 @@
     <div class="container">
       <div style="display: flex; justify-content: space-between; flex-direction: row;">
         <div class="section-box">
-          <div class="about-title mb-5" data-aos="fade-up" data-aos-duration="1000">
-              <h3 class="e-font section-title">
-                  <span class='code-font n-section-title'>02.</span> {{constants["Title"]}}
-              </h3>
-          </div>
+          <div class="about-title" data-aos="fade-up">
+            <h3 class="section-title">
+                <span class='n-section-title'>02.</span> {{constants["Title"]}}
+            </h3>
+        </div>
           <div class="jobs-tabs" data-aos="fade-up" data-aos-duration="1000">
             <ul ngbNav #nav="ngbNav" [(activeId)]="active" orientation="vertical" class="nav-tabs jobs-tabs">
                   <li *ngFor='let job of constants["Jobs"]; let i = index' [title]="job.Tab" [ngbNavItem]="i">

@@ -156,8 +156,11 @@
         .job-description{
             padding: 0px;
         }
+        .job-description-box{
+            width: 80vw;
+        }
         .animation{
-            display: block;
+            display: none;
         }
     }
     ::ng-deep .jobs-tabs{
@@ -169,7 +172,7 @@
 
         ul {
             display: block;
-            width: 100% !important;
+            width: 80vw !important;
             margin-bottom: 50px;
         }
     }

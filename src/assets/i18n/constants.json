@@ -9,14 +9,14 @@
     },
     "Banner": {
         "Pretitle": "Hello! My name is",
-        "Description": "I have <span class='underline'>4 years of experience</span> developing systems, interfaces, bots, and technological solutions to make the web a better place. I am dedicated to writing and refactoring clean, reusable, and scalable code in <span class='underline'>Angular</span> and sometimes in <span class='underline'>Laravel</span> applying good practices and development standards.",
+        "Description": "I'm a <span class='underline'>software engineer</span> with a degree in computer engineering. Passionate about both <span class='underline'>full-stack development</span> and <span class='underline'>cloud computing</span>, I find joy in crafting comprehensive solutions that seamlessly integrate frontend and backend technologies while harnessing the power of cloud services. I enjoy creating websites with <span class='underline'>clean, reusable code</span> to make them efficient and scalable. Beyond just coding, I believe in using technology to make a positive impact, aiming to create solutions that benefit the world.",
         "ActionBtn": "Get in touch"
     },
     "About": {
         "Title": "About me",
         "Paragraphs": [
-            "In my <span class='underline'>4 years as a developer</span>, I seek to train every day. I have worked writing <span class='underline'>unit tests</span>, <span class='underline'>performing continuous integration</span>, and covering backend developer roles with <span class='underline'>Laravel and Mysql</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.",
-            "My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",
+            "In my <span class='underline'>two years as a software engineer</span>, I've honed my skills in <span class='underline'>Angular</span>, <span class='underline'>.NET Core</span>, and <span class='underline'>Azure services</span>. Leveraging Azure services has not only made deployment seamless but also optimized storage solutions, enhancing the overall performance and reliability of the applications I've worked on.",
+            "Throughout my experience, I've built <span class='underline'>APIs</span>, <span class='underline'>stored procedures</span>, and <span class='underline'>dynamic frontend webpages.</span> I've also spearheaded <span class='underline'>automation testing for APIs</span>, developing a robust framework for effortless testing automation within the team." ,
             "Some of the technologies that I have trained and worked on include (but are not limited to):"
         ]
     },

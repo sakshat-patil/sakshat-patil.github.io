@@ -47,6 +47,11 @@
             p{
                 max-width: 500px;
             }
+            .details{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
 
             .div-btn-banner{
                 height: 43px;

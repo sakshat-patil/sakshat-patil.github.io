@@ -38,17 +38,27 @@
                 "Tab": "Microsoft",
                 "Title": "Tech Consultant Intern",
                 "Logo": "./../../../../assets/images/jobs/microsoft.png",
-                "Date": "May 2016 - Present",
+                "Date": "June 2021 - July 2021",
                 "Description": [
                   "Developed a learning portal for Microsoft employees using .NET Core, Vue.JS, and Azure Services.",
                   "Utilized Azure services like Azure Active Directory for Multi-Factor Authentication and Azure App Service for hosting the website, with room for future scalability."
                 ]
             },
             {
+                "Tab": "K.J.S.C.E",
+                "Title": "Python Developer Intern",
+                "Logo": "./../../../../assets/images/jobs/kjsce.png",
+                "Date": "July 2020 - September 2020",
+                "Description": [
+                  "Automated the diagnosis and analysis of ECG (electrocardiogram) paper records to predict heart-related problems using computer vision and deep learning in Python.",
+                  "Created multiple custom algorithms in the pre-processing stage to successfully extract ECG signals from the background, ensuring low noise and signal continuity, thus increasing the model accuracy from 82% to 94.4%."
+                ]
+            },
+            {
                 "Tab": "Arcon",
                 "Title": "Software Developer Intern",
                 "Logo": "./../../../../assets/images/jobs/arcon.png",
-                "Date": "July 2017 - October 2018",
+                "Date": "May 2020 - July 2020",
                 "Description": [
                   "Developed new automation scripts for the company’s application in Java using the Selenium framework.",
                   " Increased performance by 50% in the existing scripts by optimizing them using data structures."
@@ -58,29 +68,20 @@
                 "Tab": "UtokSmart",
                 "Title": "Web Developer Intern",
                 "Logo": "./../../../../assets/images/jobs/utoksmart.png",
-                "Date": "February 2016 - May 2017",
+                "Date": "February 2020 - May 2020",
                 "Description": [
-                  "Creation of WordPress templates with ACF, functional programming in Javascript / jQuery, styles in SASS",
-                  "integration of design improvements, and template loading times.",
-                  "Effective communication with the design team, working with Avocode / Figma."
-                ]
-            },
-            {
-                "Tab": "K.J.S.C.E",
-                "Title": "Python Developer Intern",
-                "Logo": "./../../../../assets/images/jobs/kjsce.png",
-                "Date": "November 2015 - December 2016",
-                "Description": [
-                  "Programming of new functionalities for an existing employee management platform made in Angular and ExpressJS.",
-                  "Perform refactoring of old code. Ensuring compatibility of every dependency in every update, along with regular Angular update as well."
+                  "Interned as a full-stack developer at 'Suvigya - A Teaching Assistant', contributing to the development of a student-teacher interactive website using Django.",
+                  "Spearheaded the creation of the authentication module utilizing Django's authentication system, ensuring secure user access and management.",
+                  "Implemented notification functionalities for teachers and students, leveraging Django signals structured as event emitters for efficient communication within the platform."
                 ]
             },
             {
                 "Tab": "K.J.S.C.E",
                 "Title": "Flask Developer Intern",
                 "Logo": "./../../../../assets/images/jobs/kjsce.png",
-                "Date": "January 2015 - July 2015",
-                "Description": ["Teaching English at a basic level to an enrollment of more than 200 students."]
+                "Date": "May 2019 - July 2019",
+                "Description": ["Developed a GRE website utilizing Flask framework, featuring an authentication system for user access control.",
+                "Implemented interactive features allowing students to learn new words from uploaded flashcards, as well as take mock quizzes to enhance their GRE preparation experience."]
             }
         ]},
     "FeatureProjects":{
@@ -88,7 +89,7 @@
         "Label": "Featured Project",
         "Projects": [{
                 "Title": "Book My Turf",
-                "Description": "Monitoring application made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, and <span class='underline'>user management</span>. It also has feedback form logic for parameter configuration.",
+                "Description": "This is an app tailored for <span class='underline'>booking sports turfs</span> for football, cricket, and tennis. Users have the option to <span class='underline'>log in either as a regular user or as a turf owner</span>. Turf owners are empowered to <span class='underline'>add new turf listings</span> to the app, while users can conveniently <span class='underline'>book available turf slots</span> for their preferred sports activities.",
                 "imgs": [
                     "assets/images/BookMyTurf/BookMyTurf-login.png",
                     "assets/images/BookMyTurf/BookMyTurf-home.png"
@@ -97,7 +98,7 @@
             },
             {
                 "Title": "VisuallyPaired",
-                "Description": "Health plan quote that has a search engine with which advanced queries are made. Plans are displayed based on the user's age, monthly income, and location. It has <span class='underline'>online chat</span, <span class='underline'>contact form</span>, <span class='underline'>notification system by whatsapp and mail</span>, <span class='underline'>auth</span>, and <span class='underline'>internet information management through the role of administrator.</span>",
+                "Description": "A mobile app designed for <span class='underline'>individuals with visual impairments</span>, enabling them to perform <span class='underline'>calculations</span>, <span class='underline'>send messages</span>, <span class='underline'>make calls</span>, <span class='underline'>identify currency</span>, and <span class='underline'>manage their Twitter accounts</span>. It features <span class='underline'>Alan AI</span> for seamless speech-to-text and text-to-speech conversion, facilitating effortless interaction with users.",
                 "imgs": [
                     "assets/images/VisuallyPaired/VisuallyPaired-home.png",
                     "assets/images/VisuallyPaired/VisuallyPaired-call.png",
@@ -144,7 +145,7 @@
     "Contact":{
         "Pretitle": "What’s Next",
         "Title": "Get in touch!",
-        "Content": "I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message. Simple one-page design that features a profile letter with basic information about a person.",
+        "Content": "Feel free to reach out by clicking the button below to send me a message. Whether you have inquiries, job opportunities, or just want to say hello, I'm always eager to hear from you. Let's start a conversation!",
         "Btn": "Say Hello"
     }
 

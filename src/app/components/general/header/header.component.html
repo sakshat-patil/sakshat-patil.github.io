@@ -22,7 +22,18 @@
                 </a>
             </li>
             <li>
-                <div ngbDropdown class="d-inline-block">
+                <div class="themes">
+                    <div (click)="setNextTheme(0)" class="language-container" [class.active] = 'themeType==0'>
+                        <div class="language-box" style="background-color: #adb5bd; border-color: #0091ad;"></div>                           
+                    </div>
+                    <div (click)="setNextTheme(1)" class="language-container"  [class.active] = 'themeType==1'>
+                        <div class="language-box" style="background-color: #303C55; border-color: #64ffda;"></div>
+                    </div>
+                    <div (click)="setNextTheme(2)"  class="language-container" [class.active] = 'themeType==2'>
+                        <div class="language-box" style="background-color: #52b788; border-color: #10676f;" ></div>                        
+                    </div>
+                </div> 
+                <!-- <div ngbDropdown class="d-inline-block">
                     <div class="language-container" id="dropdownForm1" ngbDropdownToggle>
                         <span class="flag-text" style="margin-right: 10px;">Themes</span>
                         <svg class='arrow-language' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
@@ -50,7 +61,7 @@
                               </svg>                            
                         </div>
                     </div>
-                </div>
+                </div> -->
             </li>
         </ul>
         <div class="menu-wrapper">
@@ -84,6 +95,19 @@
                           <a (click)="downloadCV()" class="main-btn cv-btn">
                             {{constants["cvBtn"]}}
                           </a>
+                      </li>
+                      <li>
+                        <div class="themes">
+                            <div (click)="setNextTheme(0)" class="language-container" [class.active] = 'themeType==0'>
+                                <div class="language-box" style="background-color: #adb5bd; border-color: #0091ad;"></div>                           
+                            </div>
+                            <div (click)="setNextTheme(1)" class="language-container"  [class.active] = 'themeType==1'>
+                                <div class="language-box" style="background-color: #303C55; border-color: #64ffda;"></div>
+                            </div>
+                            <div (click)="setNextTheme(2)"  class="language-container" [class.active] = 'themeType==2'>
+                                <div class="language-box" style="background-color: #52b788; border-color: #10676f;" ></div>                        
+                            </div>
+                        </div> 
                       </li>
                     </ol>
                 </nav>

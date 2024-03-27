@@ -37,20 +37,23 @@
             width: fit-content !important;
             margin-left: 20px;
           }
-          .language-container{
-            width: 200px;
-            margin-left: 18px;
-            margin-top: 50px;
-            padding-left: 0px;
-            padding-bottom: 0px;
-          }
-          .language-container-selector{
-            display: flex;
-            img{
-              width: 35px;
-            }
-          }
-
+          .themes{
+            margin-top: 20px;
+            justify-content: start;
+        }
+          .language-container {
+            background-color: var(--second-background-color);
+            cursor: pointer;
+            padding: 4px 4px !important;
+            margin: 7px 8px !important;
+        }
+        .language-container.active{
+            border: 1px solid var(--background-color-after);
+        }
+        
+        .language-container:hover{
+            background: var(--second-background-color);
+        }
         }
     }
     .aside-show {
@@ -116,6 +119,10 @@
     .cv-btn{
       padding: 7px 15px !important;
     }
+    .themes{
+        display: flex;
+        justify-content: center;
+      }
     .nav-link {
         padding: 5px 0px;
         color: inherit;
@@ -233,49 +240,23 @@
 .language-box{
     width: 15px;
     height: 15px;
-    margin: 0 8px;
 }
 
 .language-container {
-    padding-right: 16px;
-    padding-bottom: 4px;
-    background: var(--background-color);
+    background-color: var(--background-color);
     cursor: pointer;
+    padding: 4px 4px !important;
+    margin: 7px 8px !important;
 }
 
-.language-container-selector {
-    margin: 0 !important;
-    color: var(--fourth-color) !important;
-    padding: 11px 8px !important;
-    text-align: center;
-    background: var(--background-color) !important;
-    display: flex;
+.language-container.active{
+    border: 1px solid var(--background-color-after);
 }
 
-.language-container-selector.active {
-    margin: 0 !important;
-    color: var(--fourth-color)!important;
-    padding: 11px 8px !important;
-    text-align: center;
-    background: var(--second-background-color) !important;
+.language-container:hover{
+    background: var(--second-background-color);
 }
 
-.language-container-selector:hover {
-    background: var(--second-background-color) !important;
-}
-
-// .language-container-selector.active:after {
-//     content: " ";
-//     background: #58e2c4;
-//     width: 61%;
-//     height: 1px;
-//     position: absolute;
-//     border-radius: 10px;
-//     left: 0;
-//     right: 0;
-//     margin: auto;
-//     margin-top: 21px;
-// }
 .arrow-language {
     font-size: 10px;
     height: 10px;

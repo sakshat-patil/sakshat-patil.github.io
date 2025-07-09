@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaPython, FaAws, FaDatabase } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa';
 import { SiFastapi, SiClaude, SiMongodb } from 'react-icons/si'
 import { RxVercelLogo } from "react-icons/rx";
 import { TbBrandTwilio } from "react-icons/tb";

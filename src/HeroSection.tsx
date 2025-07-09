@@ -1,5 +1,5 @@
 // src/HeroSection.tsx
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './HeroSection.css'
 
 interface HeroSectionProps {
@@ -22,15 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   overlayOpacity = 0.8,   // gradient darkness
   imageBrightness = 0.7,  // image brightness
 }) => {
-  const [showTextSection, setShowTextSection] = useState(false)
 
-  useEffect(() => {
-    const onScroll = () => {
-      setShowTextSection(window.scrollY > window.innerHeight)
-    }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   return (
     <>

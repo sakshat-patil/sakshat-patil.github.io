@@ -1,0 +1,18 @@
+.typewriter-text {
+    font-family: monospace;
+    white-space: pre;
+  }
+  
+  .typewriter-caret {
+    display: inline-block;
+    margin-left: 2px;
+    /* animate the opacity rather than relying on a pseudo-element */
+    animation: 0.8s steps(1) infinite;
+  }
+  
+  /* simply toggle opacity */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  

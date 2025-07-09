@@ -1,0 +1,12 @@
+/* ensure App.css is imported at the top of src/index.tsx or App.tsx */
+
+.hero-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* sometimes the very first element inside—say an <h1>—has a default top margin */
+.hero-wrapper > * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

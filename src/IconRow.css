@@ -1,0 +1,16 @@
+/* IconRow.module.css */
+.contactIcons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+
+.contactIcons a {
+    color: #dadada;      
+  }
+  
+  
+.contactIcons a:hover {
+    color: #fff; 
+  }

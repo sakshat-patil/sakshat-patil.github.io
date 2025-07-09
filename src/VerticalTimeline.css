@@ -1,0 +1,11 @@
+/* more specific, in case animate.css has a stronger rule */
+.vertical-timeline-element-content--animate.animated,
+.vertical-timeline-element-icon--animate.animated {
+  animation-duration: 0.5s !important;
+}
+
+.vertical-timeline-element-content,
+.vertical-timeline-element-icon {
+  transition: all 1s !important;
+  animation-duration: 1s !important;
+}

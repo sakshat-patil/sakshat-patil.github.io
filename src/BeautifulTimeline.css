@@ -1,0 +1,28 @@
+.vertical-timeline-element-content,
+.vertical-timeline-element-icon {
+  transition: all 0.1s !important;
+}
+
+/* Make timeline nodes fully opaque during animation */
+.vertical-timeline-element-icon {
+  opacity: 1 !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  z-index: 10 !important;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Ensure the timeline line doesn't show through nodes */
+.vertical-timeline-element-icon::before,
+.vertical-timeline-element-icon::after {
+  opacity: 0 !important;
+}
+
+/* Make sure the timeline line is properly hidden behind nodes */
+.vertical-timeline::before {
+  z-index: 1 !important;
+}
+
+.vertical-timeline-element-icon {
+  z-index: 10 !important;
+  position: relative !important;
+} 

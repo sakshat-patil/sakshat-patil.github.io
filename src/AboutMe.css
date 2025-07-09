@@ -1,0 +1,23 @@
+/* AboutSection.css */
+.about {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: justify;
+    color: #d9d8d8;           /* ← makes all text inside white */
+  }
+  
+  .about__heading {
+
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    /* inherits white color */
+  }
+  
+  .about__text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    /* inherits white color */
+  }
+  

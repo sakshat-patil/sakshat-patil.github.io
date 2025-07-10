@@ -22,6 +22,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   overlayOpacity = 0.8,   // gradient darkness
   imageBrightness = 0.7,  // image brightness
 }) => {
+  // Debug: print the image URL being used
+  console.log("centerImageUrl:", centerImageUrl);
 
 
   return (

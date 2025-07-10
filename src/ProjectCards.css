@@ -23,7 +23,7 @@
 
 .project-card:hover {
   border-color: #fff;
-  box-shadow: 0 0 24px 2px #fff, 0 2px 24px 0 rgba(80, 80, 160, 0.12);
+  box-shadow: 0 0 8px 1px #bbb, 0 2px 12px 0 rgba(80, 80, 160, 0.12);
 }
 
 .project-title {
@@ -70,5 +70,5 @@
 
 .project-card:hover .tech-icon, .project-card:hover .project-tech img, .project-card:hover .project-tech span {
   color: #fff;
-  filter: drop-shadow(0 0 6px #fff);
+  filter: drop-shadow(0 0 2px #bbb);
 } 

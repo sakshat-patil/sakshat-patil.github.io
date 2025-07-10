@@ -22,7 +22,7 @@ const App: React.FC = () => (
     <section id="home">
       <HeroSection
         imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        centerImageUrl="/public/images/1742358972967.jpeg"
+        centerImageUrl={`${import.meta.env.BASE_URL}images/1742358972967.jpeg`}
         sideText={
           <>
             <h2 className='w-100 text-center m-0' style={{ fontSize: '2.5rem' }}>Hi! I'm Sakshat</h2>

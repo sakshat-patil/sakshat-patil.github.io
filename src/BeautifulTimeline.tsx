@@ -125,24 +125,7 @@ const Timeline: React.FC = () => {
             </div>
           </BeautifulTimelineItem>
 
-          <BeautifulTimelineItem 
-            dotColor="#333"
-            dotStyle={{ 
-              fontSize: '0.5rem', 
-              color: '#fff', 
-              textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff',
-              background: 'transparent',
-              border: '2px solid #fff',
-              borderRadius: '50%',
-              width: '25px',
-              height: '25px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            place="normal"
-          >
-          </BeautifulTimelineItem>
+
         </BeautifulTimeline>
       </div>
     </div>

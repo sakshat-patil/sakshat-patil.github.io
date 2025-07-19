@@ -1,0 +1,111 @@
+.skills-section {
+  padding: 4rem 0;
+  background: #111;
+  color: #fff;
+}
+
+.skill-category {
+  margin-bottom: 3rem;
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Specific styling for Programming Languages to show exactly 4 per row */
+.skills-grid.languages-grid {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(30, 32, 40, 0.95);
+  border: 2px solid #222;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  color: #fff;
+  filter: drop-shadow(0 0 10px #fff);
+  transform: scale(1.1);
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem;
+  }
+  
+  .skill-category {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+  }
+  
+  .skill-name {
+    font-size: 0.7rem;
+  }
+} 

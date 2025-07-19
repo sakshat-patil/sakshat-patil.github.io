@@ -7,6 +7,7 @@ import BeautifulTimeline from './BeautifulTimeline'
 import './App.css'  
 import IconRow from './IconRow'
 import ProjectCards from './ProjectCards'
+import SkillsSection from './SkillsSection'
 
 const navLinks: HeaderBarProps['links'] = [
   { label: 'Home', href: '#home' },
@@ -44,10 +45,11 @@ const App: React.FC = () => (
             />
           </>
         }
-        overlayOpacity={0.6}
+        overlayOpacity={0.4}
+        imageBrightness={0.85}
       />
     </section>
-    <section id="skills">
+    <section id="about">
       <AboutMe />
     </section>
     <section id="experience">
@@ -59,6 +61,7 @@ const App: React.FC = () => (
     <section id="projects">
       <ProjectCards />
     </section>
+    <SkillsSection />
   </>
 )
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa';
-import { SiFastapi, SiClaude, SiMongodb } from 'react-icons/si'
+import React, { useState, useEffect } from 'react';
+import { FaReact, FaNodeJs, FaPython, FaAws, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { SiFastapi, SiClaude, SiMongodb, SiHuggingface, SiRay, SiOpenai } from 'react-icons/si'
 import { RxVercelLogo } from "react-icons/rx";
 import { TbBrandTwilio } from "react-icons/tb";
 
@@ -31,27 +31,102 @@ const projects = [
   },
   {
     title: 'SJ Hacks - BridgeWorks',
-    description: 'A tool to alleviate homelessness by connecting people to remedial services and low-skilled jobs.',
+    description: 'A comprehensive platform to alleviate homelessness by connecting individuals to essential services, housing resources, and employment opportunities. Features job matching algorithms, service provider integration, and real-time resource tracking to help people find stable employment and housing solutions.',
     tech: [<FaReact key="react3" />, <FaNodeJs key="node2" />,
       <SiMongodb key = "mongo"/>,
       <SiFastapi key = "fast" />,],
   },
+  {
+    title: 'Local-LLM-Inference-Rayserve',
+    description: 'A local inference server using Hugging Face language models served via vLLM, Ray Serve, and FastAPI. Provides production-style architecture for local testing and development.',
+    tech: [<FaPython key="py3" />, <SiHuggingface key="hf" />, <SiRay key="ray" />, <SiFastapi key="fast2" />],
+  },
+  {
+    title: 'A Hybrid Classification Method for Heart Disease Detection',
+    description: 'Published research paper in International Journal of Applied Engineering Research. Developed a hybrid model for predicting heart disease efficiently using AI solutions.',
+    tech: [<FaPython key="py4" />, <SiOpenai key="openai" />],
+  },
 ];
 
-const ProjectCards: React.FC = () => (
-  <div className="project-cards-container">
-    {projects.map((project, idx) => (
-      <div className="project-card" key={idx}>
-        <h3 className="project-title">{project.title}</h3>
-        <p className="project-desc">{project.description}</p>
-        <div className="project-tech">
-          {project.tech.map((icon, i) => (
-            <span className="tech-icon" key={i}>{icon}</span>
+const ProjectCards: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Duplicate projects for infinite carousel
+  const carouselProjects = [...projects, ...projects];
+  const totalSlides = projects.length;
+  const maxIndex = totalSlides - 1;
+
+  // Auto-advance carousel
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + 1;
+        if (nextIndex > maxIndex) {
+          return 0;
+        }
+        return nextIndex;
+      });
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, maxIndex]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      if (nextIndex > maxIndex) {
+        return 0;
+      }
+      return nextIndex;
+    });
+    setIsAutoPlaying(false);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const prevIndexValue = prevIndex - 1;
+      if (prevIndexValue < 0) {
+        return maxIndex;
+      }
+      return prevIndexValue;
+    });
+    setIsAutoPlaying(false);
+  };
+
+
+
+  return (
+    <div className="project-cards-container">
+      <div className="carousel-wrapper">
+        <div 
+          className="carousel-track"
+          style={{ transform: `translateX(-${currentIndex * 35}%)` }}
+        >
+          {carouselProjects.map((project, idx) => (
+            <div className="project-card" key={idx}>
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-desc">{project.description}</p>
+              <div className="project-tech">
+                {project.tech.map((icon, i) => (
+                  <span className="tech-icon" key={i}>{icon}</span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
+        
+        <button className="carousel-button prev" onClick={prevSlide}>
+          <FaChevronLeft />
+        </button>
+        <button className="carousel-button next" onClick={nextSlide}>
+          <FaChevronRight />
+        </button>
       </div>
-    ))}
-  </div>
-);
+    </div>
+  );
+};
 
 export default ProjectCards; 

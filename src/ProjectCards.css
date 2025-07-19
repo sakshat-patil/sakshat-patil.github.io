@@ -1,29 +1,46 @@
 .project-cards-container {
+  max-width: 1200px;
+  margin: 3rem auto 2rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  padding: 0 4rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin: 3rem 0 2rem 0;
+  transition: transform 0.5s ease-in-out;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0;
 }
 
 .project-card {
   background: rgba(30, 32, 40, 0.95);
   border: 2px solid #222;
   border-radius: 1.25rem;
-  box-shadow: 0 2px 24px 0 rgba(80, 80, 160, 0.12);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
-  width: 320px;
+  width: calc(33.333% - 0.5rem);
+  min-width: 300px;
   min-height: 180px;
   transition: border-color 0.3s, box-shadow 0.3s;
   position: relative;
-  overflow: visible;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .project-card:hover {
   border-color: #fff;
-  box-shadow: 0 0 8px 1px #bbb, 0 2px 12px 0 rgba(80, 80, 160, 0.12);
+  box-shadow: 0 0 8px 1px #bbb;
 }
 
 .project-title {
@@ -71,4 +88,110 @@
 .project-card:hover .tech-icon, .project-card:hover .project-tech img, .project-card:hover .project-tech span {
   color: #fff;
   filter: drop-shadow(0 0 2px #bbb);
+}
+
+/* Carousel Navigation Buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 32, 40, 0.9);
+  border: 2px solid #222;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.carousel-button:hover {
+  background: rgba(30, 32, 40, 1);
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.carousel-button.prev {
+  left: 0.5rem;
+}
+
+.carousel-button.next {
+  right: 0.5rem;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #333;
+  border: 2px solid #222;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: #555;
+  border-color: #fff;
+}
+
+.dot.active {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .project-card {
+    width: calc(50% - 1rem);
+    min-width: 280px;
+  }
+  
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .carousel-button.prev {
+    left: 0.25rem;
+  }
+  
+  .carousel-button.next {
+    right: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: calc(100% - 1rem);
+    min-width: 260px;
+  }
+  
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .carousel-button.prev {
+    left: 0.1rem;
+  }
+  
+  .carousel-button.next {
+    right: 0.1rem;
+  }
 } 

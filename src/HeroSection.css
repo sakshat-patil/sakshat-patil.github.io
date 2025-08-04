@@ -10,3 +10,16 @@
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* Glass box styling */
+.glass-box {
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.glass-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+

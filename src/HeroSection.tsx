@@ -69,7 +69,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
               {/* Side text box */}
               <div className="col-auto h-100 d-flex px-0">
-                <div className="p-4 bg-dark text-white d-flex flex-column justify-content-center text-center" style={{ width: '500px' }}>
+                <div 
+                  className="p-4 text-white d-flex flex-column justify-content-center text-center glass-box" 
+                  style={{ 
+                    width: '500px',
+                    backdropFilter: 'blur(10px)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '0px',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                  }}
+                >
                   {sideText}
                 </div>
               </div>

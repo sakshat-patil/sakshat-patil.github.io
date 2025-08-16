@@ -51,11 +51,23 @@ const projects = [
 const ProjectCards: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Duplicate projects for infinite carousel
   const carouselProjects = [...projects, ...projects];
   const totalSlides = projects.length;
   const maxIndex = totalSlides - 1;
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Auto-advance carousel
   useEffect(() => {
@@ -96,14 +108,23 @@ const ProjectCards: React.FC = () => {
     setIsAutoPlaying(false);
   };
 
-
+  // Calculate translation based on screen size
+  const getTranslation = () => {
+    if (isMobile) {
+      // On mobile, each card takes full width, so translate by 100% * currentIndex
+      return `translateX(-${currentIndex * 100}%)`;
+    } else {
+      // On desktop, use the original 35% translation
+      return `translateX(-${currentIndex * 35}%)`;
+    }
+  };
 
   return (
     <div className="project-cards-container">
       <div className="carousel-wrapper">
         <div 
           className="carousel-track"
-          style={{ transform: `translateX(-${currentIndex * 35}%)` }}
+          style={{ transform: getTranslation() }}
         >
           {carouselProjects.map((project, idx) => (
             <div className="project-card" key={idx}>

@@ -14,3 +14,16 @@
 .contactIcons a:hover {
     color: #fff; 
   }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactIcons {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactIcons {
+    gap: 1rem;
+  }
+}

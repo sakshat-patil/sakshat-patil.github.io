@@ -25,4 +25,60 @@
 .vertical-timeline-element-icon {
   z-index: 10 !important;
   position: relative !important;
+}
+
+/* Responsive Design for Timeline */
+@media (max-width: 768px) {
+  .vertical-timeline-element-content {
+    padding: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .vertical-timeline-element-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .vertical-timeline-element-subtitle {
+    font-size: 0.9rem !important;
+  }
+  
+  .vertical-timeline-element-content p {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .vertical-timeline-element-content {
+    padding: 0.75rem !important;
+  }
+  
+  .vertical-timeline-element-title {
+    font-size: 1rem !important;
+  }
+  
+  .vertical-timeline-element-subtitle {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Hide all description text on mobile */
+  .vertical-timeline-element-content p,
+  .vertical-timeline-element-content div:not(.vertical-timeline-element-title):not(.vertical-timeline-element-subtitle),
+  .vertical-timeline-element-content span:not(.vertical-timeline-element-title):not(.vertical-timeline-element-subtitle),
+  .vertical-timeline-element-content small {
+    display: none !important;
+  }
+  
+  /* Override inline styles for mobile */
+  .vertical-timeline-element-content p[style],
+  .vertical-timeline-element-content small[style],
+  .vertical-timeline-element-content small {
+    display: none !important;
+  }
+  
+  /* Target the custom timeline divs */
+  .beautiful-timeline div[style*="background: rgba(255, 255, 255, 0.9)"] p,
+  .beautiful-timeline div[style*="background: rgba(255, 255, 255, 0.9)"] small {
+    display: none !important;
+  }
 } 

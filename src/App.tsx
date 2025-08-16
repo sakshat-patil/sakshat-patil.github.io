@@ -1,68 +1,99 @@
+import React, { useState, useEffect } from 'react'
 import HeaderBar from './HeaderBar'
 import type { HeaderBarProps } from './HeaderBar'
 import HeroSection from './HeroSection'
-import TypewriterText from './TypewriterText'
 import AboutMe from './AboutMe'
 import BeautifulTimeline from './BeautifulTimeline'
 import './App.css'  
-import IconRow from './IconRow'
 import ProjectCards from './ProjectCards'
 import SkillsSection from './SkillsSection'
+import LinkedInTestimonials from './LinkedInTestimonials'
+import TiltCards from './TiltCards'
 
 const navLinks: HeaderBarProps['links'] = [
-  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Resume', href: '/resume.pdf', external: true }
+  { label: 'Projects', href: '#projects' }
 ];
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return (
   <>
-    <HeaderBar title="My App" links={navLinks} />
+    <HeaderBar title="Sakshat Patil" links={navLinks} />
+    
+    {/* Hero Section */}
     <section id="home">
       <HeroSection
-        imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        centerImageUrl={`${import.meta.env.BASE_URL}images/1742358972967.jpeg`}
-        sideText={
-          <>
-            <h2 className='w-100 text-center m-0' style={{ fontSize: '2.5rem' }}>Hi! I'm Sakshat</h2>
-            <div className="d-flex align-items-center justify-content-center" style={{ minHeight: '100px' }}>
-              <TypewriterText
-                messages={[
-                  'Building reliable microservices in the cloud',
-                  'Crafting high-performance backend APIs',
-                  'Optimizing LLM performance with security',
-                  'Building scalable LLM pipelines',
-                  'Architecting cloud-native AI services',
-                ]}
-              />
-            </div>
-            <IconRow
-              linkedinUrl="https://www.linkedin.com/in/sakshat-patil/"
-              githubUrl="https://github.com/sakshat-patil"
-              email="sakshatpatil25@gmail.com"
-            />
-          </>
-        }
-        overlayOpacity={0.4}
-        imageBrightness={0.85}
+        name="Sakshat"
+        taglines={[
+          "I am a Software Engineer.",
+          "I am a Cloud Developer.",
+          "I am a Problem Solver.",
+          "I am a Backend Specialist.",
+          "I am an AI Enthusiast.",
+          "I am a Distributed Systems Developer.",
+          "I am a Full-Stack Engineer.",
+          "I am a DevOps Practitioner."
+        ]}
+        resumeUrl="/resume.pdf"
+        socialLinks={{
+          leetcode: "https://leetcode.com/u/patil_sakshat/",
+          linkedin: "https://www.linkedin.com/in/sakshat-patil/",
+          github: "https://github.com/sakshat-patil",
+          email: "sakshatpatil25@gmail.com"
+        }}
       />
     </section>
+
+    {/* About Section */}
     <section id="about">
       <AboutMe />
     </section>
+
+    {/* 3D Tilt Cards Section - Commented out */}
+    {/* <TiltCards /> */}
+
+    {/* Experience Section - Keeping the timeline as requested */}
     <section id="experience">
-      <div style={{ padding: '2rem 1rem', background: '#111' }}>
-        <h2 style={{ color: '#fff', textAlign: 'center', fontSize: '2rem', marginBottom: '1rem' }}>Work Experience</h2>
+      <div className="experience-container">
+        <h2 className="section-title">Work Experience</h2>
         <BeautifulTimeline />
       </div>
     </section>
-    <section id="projects">
-      <ProjectCards />
+
+    {/* Projects Section - Desktop Only */}
+    {!isMobile && (
+      <section id="projects">
+        <div className="projects-container">
+          <h2 className="section-title">Featured Projects</h2>
+          <ProjectCards />
+        </div>
+      </section>
+    )}
+
+    {/* Skills Section */}
+    <section id="skills">
+      <SkillsSection />
     </section>
-    <SkillsSection />
+
+    {/* LinkedIn Testimonials Section - Commented out */}
+    {/* <section id="testimonials">
+      <LinkedInTestimonials />
+    </section> */}
   </>
-)
+  );
+};
 
 export default App;

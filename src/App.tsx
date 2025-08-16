@@ -7,8 +7,8 @@ import BeautifulTimeline from './BeautifulTimeline'
 import './App.css'  
 import ProjectCards from './ProjectCards'
 import SkillsSection from './SkillsSection'
-import LinkedInTestimonials from './LinkedInTestimonials'
-import TiltCards from './TiltCards'
+// import LinkedInTestimonials from './LinkedInTestimonials'
+// import TiltCards from './TiltCards'
 
 const navLinks: HeaderBarProps['links'] = [
   { label: 'About', href: '#about' },

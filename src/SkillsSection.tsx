@@ -38,7 +38,7 @@ import {
   SiNodedotjs,
   SiApache,
   SiElasticsearch,
-  SiDocker
+  // SiDocker
 } from 'react-icons/si';
 import { VscAzureDevops } from "react-icons/vsc";
 import { PiFileSql } from "react-icons/pi";
@@ -131,7 +131,7 @@ const categoryColors = {
 
 const SkillsSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  // const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   // Group skills by category
   const skillsByCategory = skills.reduce((acc, skill) => {
@@ -158,26 +158,26 @@ const SkillsSection: React.FC = () => {
     );
   };
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'languages':
-        return <SiCplusplus />;
-      case 'devops':
-        return <SiDocker />;
-      case 'cloud':
-        return <FaAws />;
-      case 'ai':
-        return <SiTensorflow />;
-      case 'ai-tools':
-        return <SiHuggingface />;
-      case 'frameworks':
-        return <SiSpringboot />;
-      case 'tools':
-        return <SiPostman />;
-      default:
-        return <FaTerminal />;
-    }
-  };
+  // const getCategoryIcon = (category: string) => {
+  //   switch (category) {
+  //     case 'languages':
+  //       return <SiCplusplus />;
+  //     case 'devops':
+  //       return <SiDocker />;
+  //     case 'cloud':
+  //       return <FaAws />;
+  //     case 'ai':
+  //       return <SiTensorflow />;
+  //     case 'ai-tools':
+  //       return <SiHuggingface />;
+  //     case 'frameworks':
+  //       return <SiSpringboot />;
+  //     case 'tools':
+  //       return <SiPostman />;
+  //     default:
+  //       return <FaTerminal />;
+  //   }
+  // };
 
   return (
     <section id="skills" className="skills-section">
@@ -221,8 +221,8 @@ const SkillsSection: React.FC = () => {
                   <div 
                     key={index} 
                     className="skill-card-detailed"
-                    onMouseEnter={() => setHoveredSkill(skill.name)}
-                    onMouseLeave={() => setHoveredSkill(null)}
+                    // onMouseEnter={() => setHoveredSkill(skill.name)}
+                    // onMouseLeave={() => setHoveredSkill(null)}
                   >
                     <div className="skill-header">
                       <div className="skill-icon-detailed">

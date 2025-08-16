@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './HeaderBar.css'
+import { FaSun } from 'react-icons/fa'
 
 export interface HeaderBarProps {
   title: string;
@@ -10,44 +11,85 @@ export interface HeaderBarProps {
   }>;
 }
 
-const HeaderBar: React.FC<HeaderBarProps> = ({ title, links }) => (
-    <nav
-       className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1030 }}
-     >
-    <div className="container-fluid">
-      {/* Only render the brand title if provided, as non-clickable text */}
-      {title && (
-        <span className="navbar-brand ps-5">
-          {"Sakshat Patil"}
-        </span>
-      )}
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNav"
-        aria-controls="mainNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="mainNav">
-        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-          {links.map(link => link.external ? (
-            <li key={link.label} className="nav-item me-2">
-              <a className="nav-link" key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
-            </li>
-          ) : (
-            <li key={link.label} className="nav-item me-2">
-              <a className="nav-link" key={link.label} href={link.href}>{link.label}</a>
-            </li>
+const HeaderBar: React.FC<HeaderBarProps> = ({ title, links }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // Extract initials from title
+  const getInitials = (name: string) => {
+    return name.split(' ').map(word => word[0]).join('').toUpperCase();
+  };
+
+  return (
+    <nav className={`modern-navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-container">
+        {/* Brand/Logo */}
+        <div className="nav-brand">
+          {/* Logo container removed */}
+          <span className="brand-text">{title}</span>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="nav-links desktop-nav">
+          {links.map(link => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="nav-link"
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+            >
+              {link.label}
+            </a>
           ))}
-        </ul>
+        </div>
+
+        {/* Mobile Menu Button - Removed */}
+        {/* <button
+          className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+
+        <div className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+          <button className="theme-toggle mobile-theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            <FaSun className={`theme-icon ${isDarkMode ? 'dark' : ''}`} />
+          </button>
+          
+          {links.map(link => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="mobile-nav-link"
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div> */}
       </div>
-    </div>
-  </nav>
-)
+    </nav>
+  )
+}
 
 export default HeaderBar

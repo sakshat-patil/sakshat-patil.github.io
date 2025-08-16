@@ -1,0 +1,184 @@
+/* 3D Code Block Section */
+.code-block-3d-section {
+  padding: 4rem 0;
+  background: hsl(224, 32%, 12%);
+  background-image: conic-gradient(
+    from 0deg at 50% 50%,
+    blue,
+    purple,
+    purple,
+    blue
+  );
+  background-blend-mode: multiply;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code-block-3d-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.code-block-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(334, 7%, 95%);
+  margin-bottom: 3rem;
+  text-shadow: 0 0 0.3em currentColor;
+}
+
+.code-block-description {
+  font-size: 1.2rem;
+  color: hsl(334, 7%, 95%);
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* Code Block Container */
+.code-block-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 5000px;
+}
+
+/* 3D Code Block */
+.code-block {
+  --selector: hsl(338, 70%, 55%);
+  --property: hsl(183, 70%, 62%);
+  --value: hsl(183, 70%, 62%);
+  --punctuation: hsl(334, 7%, 95%);
+  --undefined: hsl(334, 7%, 95%);
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--undefined);
+  background: hsl(222, 45%, 7%);
+  padding: 3rem;
+  border-radius: 1rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+  transition: transform 0.1s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-block > * {
+  text-shadow: 0 0 0.3em currentColor;
+}
+
+/* 3D Shadow Effect */
+.code-block::before,
+.code-block::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+/* Shadow */
+.code-block::before {
+  inset: 0.75rem;
+  border-radius: inherit;
+  background: black;
+  z-index: -1;
+  transform: translateZ(-50px);
+  filter: blur(15px);
+  opacity: 0.5;
+}
+
+/* Gradient Background */
+.code-block::after {
+  z-index: -2;
+  inset: -1rem;
+  background: linear-gradient(-45deg, red, blue);
+  transform: translateZ(-50px);
+  border-radius: inherit;
+}
+
+/* Syntax Highlighting */
+.selector {
+  color: var(--selector);
+}
+
+.property {
+  color: var(--property);
+}
+
+.value {
+  color: var(--value);
+}
+
+.punctuation {
+  color: var(--punctuation);
+}
+
+.property + .punctuation {
+  color: var(--property);
+}
+
+/* Code Block Styling */
+.code-block code {
+  display: block;
+  text-align: left;
+  line-height: 1.6;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .code-block-3d-section {
+    padding: 3rem 0;
+  }
+  
+  .code-block-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .code-block {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .code-block-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-block-title {
+    font-size: 2rem;
+  }
+  
+  .code-block {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+  
+  .code-block-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.code-block-container {
+  animation: fadeInUp 0.8s ease;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './HeaderBar.css'
-import { FaSun } from 'react-icons/fa'
+// import { FaSun } from 'react-icons/fa'
 
 export interface HeaderBarProps {
   title: string;
@@ -13,8 +13,8 @@ export interface HeaderBarProps {
 
 const HeaderBar: React.FC<HeaderBarProps> = ({ title, links }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,14 +25,14 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ title, links }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  // const toggleTheme = () => {
+  //   setIsDarkMode(!isDarkMode);
+  // };
 
-  // Extract initials from title
-  const getInitials = (name: string) => {
-    return name.split(' ').map(word => word[0]).join('').toUpperCase();
-  };
+  // // Extract initials from title
+  // const getInitials = (name: string) => {
+  //   return name.split(' ').map(word => word[0]).join('').toUpperCase();
+  // };
 
   return (
     <nav className={`modern-navbar ${isScrolled ? 'scrolled' : ''}`}>

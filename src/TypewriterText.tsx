@@ -59,8 +59,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
 
   return (
     <span className="typewriter-text">
-      {display}
-      <span className="typewriter-caret">_</span>
+      {messages[0]}
     </span>
   );
 };

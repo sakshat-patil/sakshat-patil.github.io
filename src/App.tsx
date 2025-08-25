@@ -38,14 +38,7 @@ const App: React.FC = () => {
       <HeroSection
         name="Sakshat"
         taglines={[
-          "I am a Software Engineer.",
-          "I am a Cloud Developer.",
-          "I am a Problem Solver.",
-          "I am a Backend Specialist.",
-          "I am an AI Enthusiast.",
-          "I am a Distributed Systems Developer.",
-          "I am a Full-Stack Engineer.",
-          "I am a DevOps Practitioner."
+          "I ask why a technology is chosen and\nhow the approach defines the software."
         ]}
         resumeUrl="/resume.pdf"
         socialLinks={{

@@ -9,6 +9,9 @@ const AboutSection: React.FC = () => (
       <div className="about-content">
         <div className="about-text">
           <p>
+            For me, technology is never just about tools. It is about understanding why a solution is chosen and how the approach behind it shapes meaningful, reliable software.
+          </p>
+          <p>
             I'm Sakshat, a software engineer currently pursuing my MSSE at San José State University. Over the years, I've been working with cloud-native microservices, building fast APIs and scalable enterprise platforms. I focus on backend development, cloud infrastructure, and AI engineering.
           </p>
           <p>

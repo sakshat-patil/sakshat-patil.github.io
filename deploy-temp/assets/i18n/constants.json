@@ -1,0 +1,104 @@
+{
+    "Header": {
+        "Item1" : "About me",
+        "Item2" : "Experience",
+        "Item3" : "Projects",
+        "Item4" : "Contact",
+        "cvBtn" : "Resume",
+        "cvName": "SWE_Resume_Sum.pdf"
+    },
+    "Banner": {
+        "Pretitle": "Hello! My name is",
+        "Description": "For me, software development is never just about tools. It is about understanding why a solution is chosen and how the approach behind it shapes meaningful, reliable software. Passionate about both <span class='underline'>full-stack development</span> and <span class='underline'>cloud computing</span>, I find joy in crafting comprehensive solutions that seamlessly integrate frontend and backend technologies while harnessing the power of cloud services.",
+        "ActionBtn": "Get in touch"
+    },
+                "About": {
+                "Title": "About me",
+                "Paragraphs": [
+                    "I'm a <span class='underline'>Software Engineer</span> with a Master's in Software Engineering from San Jose State University and over <span class='underline'>2.5 years of experience</span> building scalable backend systems and cloud infrastructure solutions. My expertise lies in <span class='underline'>Java Spring Boot</span>, <span class='underline'>microservices architecture</span>, and <span class='underline'>cloud-native development</span>.",
+                    "At Reliance Jio, I architected and maintained scalable backend modules for CloudXp, a Hybrid Cloud Management Platform, including the Cost Management module. I've also designed CI/CD pipelines using Azure DevOps and deployed Dockerized services across AWS, Azure, and on-prem Kubernetes clusters.",
+                    "Some of the technologies that I have trained and worked on include (but are not limited to):"
+                ]
+            },
+    "Experience":{
+        "Title": "Experience",
+        "Jobs": [            {
+                "Tab": "Reliance Jio",
+                "Title": "Software Engineer",
+                "Logo": "./../../../../assets/images/jobs/jio.png",
+                "Date": "July 2022 - January 2025",
+                "Description": [
+                  "Built and maintained 4 scalable backend modules for CloudXp, a Hybrid Cloud Management Platform designed to help businesses manage and optimize their cloud infrastructure across various cloud providers, serving users with hybrid cloud analytics and governance services.",
+                  "Improved API response latency by 85% by profiling Java Spring Boot services and optimizing SQL queries, reducing average latency from 1.3s to 200ms.",
+                  "Migrated 15+ microservices from Oracle to PostgreSQL, redesigning schemas, implementing multi-threaded/concurrent query processing, and improving query throughput by 40%, enhancing reliability and scalability.",
+                  "Designed CI/CD pipelines using Azure DevOps; deployed Dockerized services across AWS, Azure, and on-prem Kubernetes clusters.",
+                  "Partnered with data teams to integrate Spark batch jobs and stream outputs to real-time dashboards.",
+                  "Mentored 5 junior engineers in clean code practices, debugging, and on-call rotations; led code reviews to maintain production quality."
+                ]
+            },
+            {
+                "Tab": "WebReach",
+                "Title": "Software Development Intern",
+                "Logo": "./../../../../assets/images/jobs/webreach.png",
+                "Date": "November 2021 - July 2022",
+                "Description": [
+                  "Evaluated and validated Flutter through a successful Proof of Concept (POC) to pave the way for building and deploying cross-platform mobile apps, significantly boosting the team's development velocity.",
+                  "Engineered responsive web apps using JavaScript, optimizing the user interface for mobile and desktop to increase accessibility and engagement.",
+                  "Debugged and resolved 20+ issues following Agile practices and used Git for version control, ensuring on-time project delivery."
+                ]
+            }
+        ]},
+                "FeatureProjects":{
+                "Title": "My projects",
+                "Label": "Featured Project",
+                "Projects": [{
+                        "Title": "GitTranslate",
+                        "Description": "A tool designed to make coding tools accessible to non-native English speakers by providing <span class='underline'>AI-powered translation</span> for Git repositories and documentation. Built with Next.js and FastAPI, it helps bridge language barriers in software development and makes programming resources more inclusive for global developers.",
+                        "imgs": [
+                            "assets/images/gitcast/gitcast1.jpg",
+                            "assets/images/gitcast/gitcast2.png"
+                        ],
+                        "Technologies": ["Next.js", "FastAPI", "OpenAI API", "TypeScript", "Python"],
+                        "ghLink": "https://github.com/sakshat-patil/GitTranslate"
+                    },
+                    {
+                        "Title": "BridgeWorks",
+                        "Description": "A <span class='underline'>community-driven platform</span> designed to alleviate homelessness by connecting unhoused and at-risk individuals in San José with short-term gigs and service opportunities. Built with React.js, FastAPI, and MongoDB, it features a reputation scoring system that helps rebuild work experience and foster pathways to employment and housing.",
+                        "imgs": [
+                            "assets/images/Bridgeworks/bridgeworks1.png",
+                            "assets/images/Bridgeworks/bridgeworks2.png",
+                            "assets/images/Bridgeworks/bridgeworks3.png"
+                        ],
+                        "Technologies": ["React.js", "FastAPI", "MongoDB", "Docker", "AWS EC2"],
+                        "ghLink": "https://github.com/SJ-Hacks/Bridge-Work"
+                    }]
+                },
+    "OtherProjects":{
+        "Title": "More projects",
+        "Projects": [{
+                "Title": "Local-LLM-Inference-Rayserve",
+                "Description": "This project sets up a local inference server using a Hugging Face language model served via vLLM, Ray Serve, and FastAPI. The server runs entirely on CPU or GPU and provides a production-style architecture for local testing and development.",
+                "ghLink": "https://github.com/sakshat-patil/llm-local-inference-rayserve",
+                "Technologies": ["Python", "vLLM", "Ray Serve", "FastAPI", "Hugging Face"]
+            },
+            {
+                "Title": "MedAssist",
+                "Description": "Built for AWS MCP Hackathon: Developed an agentic AI-powered medical triage system using React, TypeScript, and FastAPI. Implemented autonomous medical case analysis using Anthropic Claude's agentic capabilities for real-time risk assessment. Created an intelligent document processing pipeline for medical reports with automated emergency notifications via Twilio.",
+                "ghLink": "https://github.com/sakshat-patil/MedAssist",
+                "Technologies": ["React", "TypeScript", "FastAPI", "Anthropic Claude", "Twilio"]
+            },
+                                {
+                        "Title": "A Hybrid Classification Method for Heart Disease Detection",
+                        "Description": "Published in International Journal of Applied Engineering Research (Nov 2021). By combining methods like Convolutional Neural Networks (CNNs), Transformers, and ensemble learning, these models can pick up both small details and big patterns in patient data. This shows that using different algorithms together can make predictions in healthcare more accurate.",
+                        "ghLink": null,
+                        "Technologies": ["Machine Learning", "AI", "Healthcare", "Research"]
+                    }]
+        },
+    "Contact":{
+        "Pretitle": "What’s Next",
+        "Title": "Get in touch!",
+        "Content": "Feel free to reach out by clicking the button below to send me a message. Whether you have inquiries, job opportunities, or just want to say hello, I'm always eager to hear from you. Let's start a conversation!",
+        "Btn": "Say Hello"
+    }
+
+}

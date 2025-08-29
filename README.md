@@ -1,7 +1,9 @@
 # Portfolio website 
 
 ## Getting Started
-Hello and welcome! I'm Gaurav Khatwani, the mind behind this Angular portfolio. Besides the basics, my portfolio has two cool things. First, there are 3D interactive models you can play with, thanks to Three.js. Second, you can choose from three different looks for the site. Just click the top-right corner of the header to switch themes. Check out my portfolio at [gauravkhatwani.in](https://gauravkhatwani.in).
+Hello and welcome! This is a customized version of Gaurav Khatwani's Angular portfolio. The original portfolio was created by Gaurav Khatwani and features two cool things. First, there are 3D interactive models you can play with, thanks to Three.js. Second, you can choose from three different looks for the site. Just click the top-right corner of the header to switch themes. Check out the original portfolio at [gauravkhatwani.in](https://gauravkhatwani.in).
+
+This version has been customized for Sakshat Patil while maintaining full credit to the original author.
 
 ### Prerequisites
 

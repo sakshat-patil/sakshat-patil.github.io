@@ -1,6 +1,7 @@
 @import "./variables.scss";
 @import "./mixnis.scss";
 @import "./themes.scss";
+@import "../node_modules/@coreui/icons/css/all.min.css";
 
 :root {
     @include spread-map($day-theme);

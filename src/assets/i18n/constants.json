@@ -5,142 +5,94 @@
         "Item3" : "Projects",
         "Item4" : "Contact",
         "cvBtn" : "Resume",
-        "cvName": "CV_Gaurav_Khatwani.pdf"
+        "cvName": "SWE_Resume_Sum.pdf"
     },
     "Banner": {
         "Pretitle": "Hello! My name is",
-        "Description": "I'm a <span class='underline'>software engineer</span> with a degree in computer engineering. Passionate about both <span class='underline'>full-stack development</span> and <span class='underline'>cloud computing</span>, I find joy in crafting comprehensive solutions that seamlessly integrate frontend and backend technologies while harnessing the power of cloud services. I enjoy creating websites with <span class='underline'>clean, reusable code</span> to make them efficient and scalable. Beyond just coding, I believe in using technology to make a positive impact, aiming to create solutions that benefit the world.",
+        "Description": "For me, software development is never just about tools. It is about understanding why a solution is chosen and how the approach behind it shapes meaningful, reliable software. Passionate about both <span class='underline'>full-stack development</span> and <span class='underline'>cloud computing</span>, I find joy in crafting comprehensive solutions that seamlessly integrate frontend and backend technologies while harnessing the power of cloud services.",
         "ActionBtn": "Get in touch"
     },
-    "About": {
-        "Title": "About me",
-        "Paragraphs": [
-            "In my <span class='underline'>two years as a software engineer</span>, I've honed my skills in <span class='underline'>Angular</span>, <span class='underline'>.NET Core</span>, and <span class='underline'>Azure services</span>. Leveraging Azure services has not only made deployment seamless but also optimized storage solutions, enhancing the overall performance and reliability of the applications I've worked on.",
-            "Throughout my experience, I've built <span class='underline'>APIs</span>, <span class='underline'>stored procedures</span>, and <span class='underline'>dynamic frontend webpages.</span> I've also spearheaded <span class='underline'>automation testing for APIs</span>, developing a robust framework for effortless testing automation within the team." ,
-            "Some of the technologies that I have trained and worked on include (but are not limited to):"
-        ]
-    },
+                "About": {
+                "Title": "About me",
+                "Paragraphs": [
+                    "I'm a <span class='underline'>Software Engineer</span> with a Master's in Software Engineering from San Jose State University and over <span class='underline'>2.5 years of experience</span> building scalable backend systems and cloud infrastructure solutions. My expertise lies in <span class='underline'>Java Spring Boot</span>, <span class='underline'>microservices architecture</span>, and <span class='underline'>cloud-native development</span>.",
+                    "At Reliance Jio, I architected and maintained scalable backend modules for CloudXp, a Hybrid Cloud Management Platform, including the Cost Management module. I've also designed CI/CD pipelines using Azure DevOps and deployed Dockerized services across AWS, Azure, and on-prem Kubernetes clusters.",
+                    "Some of the technologies that I have trained and worked on include (but are not limited to):"
+                ]
+            },
     "Experience":{
         "Title": "Experience",
-        "Jobs": [{
-                "Tab": "Microsoft",
-                "Title": "Tech Consultant FTE",
-                "Logo": "./../../../../assets/images/jobs/microsoft.png",
-                "Date": "August 2022 - Present",
+        "Jobs": [            {
+                "Tab": "Reliance Jio",
+                "Title": "Software Engineer",
+                "Logo": "./../../../../assets/images/jobs/jio.png",
+                "Date": "July 2022 - January 2025",
                 "Description": [
-                  "Participated in refactoring majority of a project's codebase within 2 weeks, increasing the code quality rating by over 90% and ensuring code reusability.",
-                  "Developed numerous end-to-end APIs single-handedly using .NET Core and Azure services, incorporating best practices to ensure flexible and scalable code.",
-                  "Improved the automation framework for API testing, allowing the framework to run an average of 10 test cases at once as opposed to only a single test case at a time.",
-                  "Chosen as the Development Lead for a batch of interns at Microsoft, guiding them to build a 'Warehouse Management System'."
+                  "Built and maintained 4 scalable backend modules for CloudXp, a Hybrid Cloud Management Platform designed to help businesses manage and optimize their cloud infrastructure across various cloud providers, serving users with hybrid cloud analytics and governance services.",
+                  "Improved API response latency by 85% by profiling Java Spring Boot services and optimizing SQL queries, reducing average latency from 1.3s to 200ms.",
+                  "Migrated 15+ microservices from Oracle to PostgreSQL, redesigning schemas, implementing multi-threaded/concurrent query processing, and improving query throughput by 40%, enhancing reliability and scalability.",
+                  "Designed CI/CD pipelines using Azure DevOps; deployed Dockerized services across AWS, Azure, and on-prem Kubernetes clusters.",
+                  "Partnered with data teams to integrate Spark batch jobs and stream outputs to real-time dashboards.",
+                  "Mentored 5 junior engineers in clean code practices, debugging, and on-call rotations; led code reviews to maintain production quality."
                 ]
             },
             {
-                "Tab": "Microsoft",
-                "Title": "Tech Consultant Intern",
-                "Logo": "./../../../../assets/images/jobs/microsoft.png",
-                "Date": "June 2021 - July 2021",
+                "Tab": "WebReach",
+                "Title": "Software Development Intern",
+                "Logo": "./../../../../assets/images/jobs/webreach.png",
+                "Date": "November 2021 - July 2022",
                 "Description": [
-                  "Developed a learning portal for Microsoft employees using .NET Core, Vue.JS, and Azure Services.",
-                  "Utilized Azure services like Azure Active Directory for Multi-Factor Authentication and Azure App Service for hosting the website, with room for future scalability."
+                  "Evaluated and validated Flutter through a successful Proof of Concept (POC) to pave the way for building and deploying cross-platform mobile apps, significantly boosting the team's development velocity.",
+                  "Engineered responsive web apps using JavaScript, optimizing the user interface for mobile and desktop to increase accessibility and engagement.",
+                  "Debugged and resolved 20+ issues following Agile practices and used Git for version control, ensuring on-time project delivery."
                 ]
-            },
-            {
-                "Tab": "K.J.S.C.E",
-                "Title": "Python Developer Intern",
-                "Logo": "./../../../../assets/images/jobs/kjsce.png",
-                "Date": "July 2020 - September 2020",
-                "Description": [
-                  "Automated the diagnosis and analysis of ECG (electrocardiogram) paper records to predict heart-related problems using computer vision and deep learning in Python.",
-                  "Created multiple custom algorithms in the pre-processing stage to successfully extract ECG signals from the background, ensuring low noise and signal continuity, thus increasing the model accuracy from 82% to 94.4%."
-                ]
-            },
-            {
-                "Tab": "Arcon",
-                "Title": "Software Developer Intern",
-                "Logo": "./../../../../assets/images/jobs/arcon.png",
-                "Date": "May 2020 - July 2020",
-                "Description": [
-                  "Developed new automation scripts for the company’s application in Java using the Selenium framework.",
-                  " Increased performance by 50% in the existing scripts by optimizing them using data structures."
-                ]
-            },
-            {
-                "Tab": "UtokSmart",
-                "Title": "Web Developer Intern",
-                "Logo": "./../../../../assets/images/jobs/utoksmart.png",
-                "Date": "February 2020 - May 2020",
-                "Description": [
-                  "Interned as a full-stack developer at 'Suvigya - A Teaching Assistant', contributing to the development of a student-teacher interactive website using Django.",
-                  "Spearheaded the creation of the authentication module utilizing Django's authentication system, ensuring secure user access and management.",
-                  "Implemented notification functionalities for teachers and students, leveraging Django signals structured as event emitters for efficient communication within the platform."
-                ]
-            },
-            {
-                "Tab": "K.J.S.C.E",
-                "Title": "Flask Developer Intern",
-                "Logo": "./../../../../assets/images/jobs/kjsce.png",
-                "Date": "May 2019 - July 2019",
-                "Description": ["Developed a GRE website utilizing Flask framework, featuring an authentication system for user access control.",
-                "Implemented interactive features allowing students to learn new words from uploaded flashcards, as well as take mock quizzes to enhance their GRE preparation experience."]
             }
         ]},
-    "FeatureProjects":{
-        "Title": "My projects",
-        "Label": "Featured Project",
-        "Projects": [{
-                "Title": "Book My Turf",
-                "Description": "This is an app tailored for <span class='underline'>booking sports turfs</span> for football, cricket, and tennis. Users have the option to <span class='underline'>log in either as a regular user or as a turf owner</span>. Turf owners are empowered to <span class='underline'>add new turf listings</span> to the app, while users can conveniently <span class='underline'>book available turf slots</span> for their preferred sports activities.",
-                "imgs": [
-                    "assets/images/BookMyTurf/BookMyTurf-login.png",
-                    "assets/images/BookMyTurf/BookMyTurf-home.png"
-                ],
-                "Technologies": ["Flutter", "Dart", "Firebase"]
-            },
-            {
-                "Title": "VisuallyPaired",
-                "Description": "A mobile app designed for <span class='underline'>individuals with visual impairments</span>, enabling them to perform <span class='underline'>calculations</span>, <span class='underline'>send messages</span>, <span class='underline'>make calls</span>, <span class='underline'>identify currency</span>, and <span class='underline'>manage their Twitter accounts</span>. It features <span class='underline'>Alan AI</span> for seamless speech-to-text and text-to-speech conversion, facilitating effortless interaction with users.",
-                "imgs": [
-                    "assets/images/VisuallyPaired/VisuallyPaired-home.png",
-                    "assets/images/VisuallyPaired/VisuallyPaired-call.png",
-                    "assets/images/VisuallyPaired/VisuallyPaired-message.png",
-                    "assets/images/VisuallyPaired/VisuallyPaired-currency.png",
-                    "assets/images/VisuallyPaired/VisuallyPaired-calculate.png"
-                ],
-                "Technologies": ["Flutter", "Dart", "Firebase", "Alan AI", "ML"]
-            }]
-        },
+                "FeatureProjects":{
+                "Title": "My projects",
+                "Label": "Featured Project",
+                "Projects": [{
+                        "Title": "GitTranslate",
+                        "Description": "A tool designed to make coding tools accessible to non-native English speakers by providing <span class='underline'>AI-powered translation</span> for Git repositories and documentation. Built with Next.js and FastAPI, it helps bridge language barriers in software development and makes programming resources more inclusive for global developers.",
+                        "imgs": [
+                            "assets/images/gitcast/gitcast1.jpg",
+                            "assets/images/gitcast/gitcast2.png"
+                        ],
+                        "Technologies": ["Next.js", "FastAPI", "OpenAI API", "TypeScript", "Python"],
+                        "ghLink": "https://github.com/sakshat-patil/GitTranslate"
+                    },
+                    {
+                        "Title": "BridgeWorks",
+                        "Description": "A <span class='underline'>community-driven platform</span> designed to alleviate homelessness by connecting unhoused and at-risk individuals in San José with short-term gigs and service opportunities. Built with React.js, FastAPI, and MongoDB, it features a reputation scoring system that helps rebuild work experience and foster pathways to employment and housing.",
+                        "imgs": [
+                            "assets/images/Bridgeworks/bridgeworks1.png",
+                            "assets/images/Bridgeworks/bridgeworks2.png",
+                            "assets/images/Bridgeworks/bridgeworks3.png"
+                        ],
+                        "Technologies": ["React.js", "FastAPI", "MongoDB", "Docker", "AWS EC2"],
+                        "ghLink": "https://github.com/SJ-Hacks/Bridge-Work"
+                    }]
+                },
     "OtherProjects":{
         "Title": "More projects",
         "Projects": [{
-                "Title": "SkillGrader",
-                "Description": "The educational platform facilitates university teachers in uploading lecture recordings, tests, and grading student submissions. Students can access the recordings, prepare for tests, and submit their assignments, earning credits based on their grades to fulfill course completion requirements.",
-                "ghLink": "https://github.com/gaurav148/SkillGrader",
-                "Technologies": ["NodeJS", "Express", "MySQL", "HTML", "CSS"]
+                "Title": "Local-LLM-Inference-Rayserve",
+                "Description": "This project sets up a local inference server using a Hugging Face language model served via vLLM, Ray Serve, and FastAPI. The server runs entirely on CPU or GPU and provides a production-style architecture for local testing and development.",
+                "ghLink": "https://github.com/sakshat-patil/llm-local-inference-rayserve",
+                "Technologies": ["Python", "vLLM", "Ray Serve", "FastAPI", "Hugging Face"]
             },
             {
-                "Title": "Caption Generator",
-                "Description": "The website enables users to upload pictures and automatically generates captions using various NLP techniques, including tokenization, stop words removal, and next word prediction. ",
-                "ghLink": "https://github.com/gaurav148/Caption-Generator",
-                "Technologies": ["HTML", "CSS", "NLP", "Machine Learning"]
+                "Title": "MedAssist",
+                "Description": "Built for AWS MCP Hackathon: Developed an agentic AI-powered medical triage system using React, TypeScript, and FastAPI. Implemented autonomous medical case analysis using Anthropic Claude's agentic capabilities for real-time risk assessment. Created an intelligent document processing pipeline for medical reports with automated emergency notifications via Twilio.",
+                "ghLink": "https://github.com/sakshat-patil/MedAssist",
+                "Technologies": ["React", "TypeScript", "FastAPI", "Anthropic Claude", "Twilio"]
             },
-            {
-                "Title": "QTalk",
-                "Description": "The social chat app enables users to communicate using various media, with a child-lock feature to prevent sharing inappropriate content and discourage offensive language. Additionally, it offers advanced features such as a fake news detector and text extraction from images.",
-                "ghLink": "https://github.com/gaurav148/QTalk",
-                "Technologies": ["Flutter", "Dart", "Firebase", "ML"]
-            },
-            {
-                "Title": "StudySmart GRE",
-                "Description": "A GRE website which offers flashcards and quizzes to help students improve their verbal and math skills. It provides customized study materials to prepare for the exam effectively.",
-                "ghLink": "https://github.com/gaurav148/gre",
-                "Technologies": ["Python", "Flask", "PostgreSQL", "HTML", "CSS"]
-            },
-            {
-                "Title": "Blogify Hub",
-                "Description": "A blog platform where users can authenticate, create their own blogs, and explore content written by others. Users have the flexibility to include pictures, emojis, and text in their blog posts.",
-                "ghLink": "https://github.com/gaurav148/DjangoProject",
-                "Technologies": ["Python", "Django", "MySQL", "HTML", "CSS"]
-            }]
+                                {
+                        "Title": "A Hybrid Classification Method for Heart Disease Detection",
+                        "Description": "Published in International Journal of Applied Engineering Research (Nov 2021). By combining methods like Convolutional Neural Networks (CNNs), Transformers, and ensemble learning, these models can pick up both small details and big patterns in patient data. This shows that using different algorithms together can make predictions in healthcare more accurate.",
+                        "ghLink": null,
+                        "Technologies": ["Machine Learning", "AI", "Healthcare", "Research"]
+                    }]
         },
     "Contact":{
         "Pretitle": "What’s Next",

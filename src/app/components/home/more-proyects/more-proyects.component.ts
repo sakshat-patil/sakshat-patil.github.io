@@ -36,7 +36,9 @@ export class MoreProyectsComponent implements OnInit {
       if(id=='demoLink' || id=='ghLink'){
         return
       }
-      window.open(route, '_blank');
+      if(route && route.trim() !== ''){
+        window.open(route, '_blank');
+      }
     }
 
     fetchData() {

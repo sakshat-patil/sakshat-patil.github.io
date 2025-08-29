@@ -8,7 +8,7 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'gauravkhatwani-portfolio';
+  title = 'sakshat-patil-portfolio';
   
   constructor(
     private titleService: Title,
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
     }
   ngOnInit(): void{
 
-    this.titleService.setTitle( "Gaurav Khatwani | Software Developer" );
+    this.titleService.setTitle( "Sakshat Patil | Software Engineer" );
 
     this.metaService.addTags([
       {name: 'keywords', content: 'Frontend, software, developer'},

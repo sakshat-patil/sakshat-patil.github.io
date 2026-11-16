@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Asked Them to Delete Your Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a single long-form reading column with a slim author bar, in the style of a blogging platform. Deliberately one light look so screenshots match the slides. */
+:root {
+  --bg: #ffffff;
+  --ink: #242424;
+  --soft-ink: #6b6b6b;
+  --rule: #e8e8e8;
+  --tint: #f7f7f5;
+  --accent: #c4502a;
+  --match: #1a7f4b;
+  --match-bg: #e8f5ee;
+  --miss-bg: #fbeee9;
+  --serif: "Source Serif 4", Charter, Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); }
+
+.topbar {
+  border-bottom: 1px solid var(--rule);
+  padding-block: 14px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site { font-family: var(--serif); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.top-actions { display: flex; gap: 18px; color: var(--soft-ink); font-size: 14px; align-items: center; }
+.top-actions svg { width: 22px; height: 22px; }
+
+main {
+  padding-block: 40px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+article { max-width: 680px; margin: 0 auto; }
+
+h1 {
+  font-family: var(--sans); font-weight: 700; font-size: clamp(30px, 5vw, 42px);
+  line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px; text-wrap: balance;
+}
+.dek { font-family: var(--sans); font-size: clamp(19px, 2.6vw, 22px); line-height: 1.35; color: var(--soft-ink); margin: 0 0 28px; text-wrap: balance; }
+
+.byline { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.avatar {
+  width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--bg);
+  display: grid; place-items: center; font-weight: 600; font-size: 15px; flex: none;
+}
+.byline-text { font-size: 15px; line-height: 1.4; min-width: 0; }
+.byline-text .name { font-weight: 600; }
+.byline-text .follow { color: var(--match); font-weight: 600; margin-left: 6px; }
+.byline-text .meta { color: var(--soft-ink); font-size: 14px; }
+
+.actionbar {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  padding: 10px 4px; margin-bottom: 36px; color: var(--soft-ink); font-size: 14px;
+}
+.actionbar .grp { display: flex; gap: 22px; align-items: center; }
+.actionbar span { display: inline-flex; gap: 6px; align-items: center; }
+.actionbar svg { width: 20px; height: 20px; }
+
+.body p, .body li {
+  font-family: var(--serif); font-size: 20px; line-height: 1.6; letter-spacing: -0.003em;
+}
+.body p { margin: 0 0 26px; }
+.body h2 {
+  font-family: var(--sans); font-weight: 700; font-size: 26px; line-height: 1.25;
+  letter-spacing: -0.015em; margin: 48px 0 12px;
+}
+.body a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.body a:focus-visible, button:focus-visible, input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cite { font-family: var(--sans); font-size: 15px; color: var(--soft-ink); white-space: nowrap; }
+.pull {
+  font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.4;
+  margin: 8px 0 34px; padding-left: 22px; border-left: 3px solid var(--ink);
+}
+
+figure { margin: 8px 0 36px; }
+figcaption { font-family: var(--sans); font-size: 14px; color: var(--soft-ink); text-align: center; margin-top: 10px; }
+
+/* Profile card */
+.profile { background: var(--tint); border-radius: 6px; padding: 22px 24px; font-family: var(--sans); }
+.profile h3 { margin: 0 0 4px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft-ink); font-weight: 600; }
+.profile .who { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+.profile dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 0; font-size: 16px; }
+.profile dt { color: var(--soft-ink); }
+.profile dd { margin: 0; min-width: 0; }
+.tag { display: inline-block; background: var(--miss-bg); color: var(--accent); font-weight: 600; padding: 2px 10px; border-radius: 999px; }
+
+/* Matching demo */
+.demo { border: 1px solid var(--rule); border-radius: 6px; padding: 22px 24px; font-family: var(--sans); }
+.demo-head { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft-ink); font-weight: 600; margin-bottom: 6px; }
+.demo-q { font-size: 17px; font-weight: 600; margin: 0 0 14px; }
+.choices { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.choice { display: flex; gap: 10px; align-items: center; font-size: 16px; }
+.choice input { width: 18px; height: 18px; accent-color: var(--ink); flex: none; }
+.choice .id { font-variant-numeric: tabular-nums; font-weight: 600; }
+.choice .kind { color: var(--soft-ink); }
+.brokers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.broker { border-radius: 6px; padding: 12px 14px; background: var(--miss-bg); transition: background .2s; min-width: 0; }
+.broker.hit { background: var(--match-bg); }
+.broker .bn { font-size: 13px; color: var(--soft-ink); font-weight: 600; }
+.broker .holds { font-size: 14px; margin: 4px 0 8px; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.broker .st { font-size: 15px; font-weight: 700; color: var(--accent); }
+.broker.hit .st { color: var(--match); }
+.tally { margin-top: 14px; font-size: 15px; color: var(--soft-ink); }
+.tally b { color: var(--ink); }
+@media (max-width: 560px) { .brokers { grid-template-columns: 1fr; } }
+
+/* Outcomes */
+.outcomes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; font-family: var(--sans); margin: 4px 0 30px; }
+.outcomes div { background: var(--tint); border-radius: 6px; padding: 14px 16px; min-width: 0; }
+.outcomes b { display: block; font-size: 16px; margin-bottom: 4px; }
+.outcomes span { font-size: 15px; color: var(--soft-ink); line-height: 1.45; }
+.outcomes .warn b { color: var(--accent); }
+@media (max-width: 520px) { .outcomes { grid-template-columns: 1fr; } }
+
+/* Map */
+.map-wrap { overflow-x: auto; background: var(--tint); border-radius: 6px; padding: 18px 12px; }
+.map-wrap svg { display: block; min-width: 620px; width: 100%; height: auto; font-family: var(--sans); }
+.node rect { fill: var(--bg); stroke: var(--rule); }
+.node.key rect { fill: var(--ink); stroke: var(--ink); }
+.node text { fill: var(--ink); font-size: 12px; }
+.node.key text { fill: var(--bg); }
+.node .lbl { font-weight: 700; font-size: 14px; }
+.edge { stroke: var(--soft-ink); stroke-width: 1.5; fill: none; }
+.arrowhead { fill: var(--soft-ink); }
+.out rect { fill: var(--match-bg); stroke: none; }
+.out.miss rect { fill: var(--miss-bg); }
+.out text { font-size: 13px; font-weight: 600; fill: var(--ink); }
+.note-t { font-size: 12px; fill: var(--soft-ink); }
+
+.endnote { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 22px; font-family: var(--sans); font-size: 14px; color: var(--soft-ink); line-height: 1.6; }
+.endnote ol { padding-left: 20px; margin: 8px 0 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.tags span { font-family: var(--sans); font-size: 14px; background: var(--tint); padding: 6px 14px; border-radius: 999px; }
+
+@media (prefers-reduced-motion: reduce) { .broker { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="site">Sakshat Patil</div>
+    <div class="top-actions" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      <span>Write</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 17V11a6 6 0 1 1 12 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg>
+    </div>
+  </div>
+</header>
+
+<main>
+<article>
+  <h1>You Asked Them to Delete Your Data. What Happens Next?</h1>
+  <p class="dek">California’s DROP system makes privacy requests easier. Finding the right records is still part of the challenge.</p>
+
+  <div class="byline">
+    <div class="avatar" aria-hidden="true">SP</div>
+    <div class="byline-text">
+      <div><span class="name">Sakshat Patil</span><span class="follow">Follow</span></div>
+      <div class="meta">6 min read · Nov 3, 2026</div>
+    </div>
+  </div>
+
+  <div class="actionbar" aria-hidden="true">
+    <div class="grp">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 11l3-6c1 0 2 1 2 2l-1 4h6c1 0 2 1 1.7 2.2l-1.6 6c-.2.5-.7.8-1.2.8H7z"/><path d="M4 11h3v9H4z"/></svg></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5h14v10H10l-5 4z"/></svg></span>
+    </div>
+    <div class="grp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 4h10v16l-5-3.5L7 20z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 13v6h14v-6"/></svg>
+    </div>
+  </div>
+
+  <div class="body">
+    <p>You delete an app, clear your browsing history, and move on. Somewhere else, information collected during those activities may still exist.</p>
+    <p>A data broker might hold your email address, shopping habits, browsing history, or an estimate of your interests. You may never have created an account with that company. You may not even recognize its name.</p>
+    <p>California’s Delete Request and Opt-out Platform, known as DROP, gives residents a simpler way to respond. Instead of tracking down brokers individually, they can submit one request through a free state service. But sending a request and removing information are separate steps. Between them sits a less visible problem: connecting the request to the right records.</p>
+
+    <h2>A profile you never created</h2>
+    <p>Imagine Maya, a college student in California, searching for hiking routes and buying a pair of trail shoes. These are ordinary activities. In a fictional data profile, however, they might become evidence that she is an “outdoor enthusiast.”</p>
+
+    <figure>
+      <div class="profile">
+        <h3>Fictional data profile</h3>
+        <div class="who">Maya, college student</div>
+        <dl>
+          <dt>Searched</dt><dd>Hiking routes near the Bay Area</dd>
+          <dt>Bought</dt><dd>Trail running shoes</dd>
+          <dt>Inferred</dt><dd><span class="tag">Outdoor enthusiast</span></dd>
+        </dl>
+      </div>
+      <figcaption>Two ordinary actions become a label an advertiser can buy.</figcaption>
+    </figure>
+
+    <p>That label could be useful to an advertiser, even if Maya bought the shoes for someone else.</p>
+    <p>Data brokers combine information from different sources and make inferences about people. CalPrivacy lists shopping habits, precise location, browsing history, and health-related information among the categories brokers may collect and sell. The resulting profile can contain both recorded activities and assumptions drawn from them. <a class="cite" href="https://privacy.ca.gov" target="_blank" rel="noopener">privacy.ca.gov</a></p>
+    <p class="pull">How do you ask a company to remove your information when you do not know it has any?</p>
+
+    <h2>Privacy rights can become homework</h2>
+    <p>Before a shared request system, exercising privacy rights could mean finding individual brokers, locating their forms, and following different instructions for each one.</p>
+    <p>Research suggests that submitting a request did not reliably produce a response. In <em>Consumer Beware! Exploring Data Brokers’ CCPA Compliance</em>, researchers submitted data-access requests to 543 California-registered brokers. More than 40 percent did not respond. Some responding companies requested additional personal information for identity verification, creating another concern for people trying to protect their privacy. <a class="cite" href="https://arxiv.org/abs/2506.21914" target="_blank" rel="noopener">arxiv.org</a></p>
+    <p>The study examined access requests before DROP processing began. Its findings do not establish how well DROP deletes information. They do show why a right can be difficult to use when the person exercising it must navigate hundreds of separate processes.</p>
+    <p>DROP addresses that burden at the point of entry. California residents verify eligibility, create a profile, and submit a request through one service. Brokers began processing requests in August 2026, and status updates can take up to 90 days. <a class="cite" href="https://privacy.ca.gov" target="_blank" rel="noopener">privacy.ca.gov</a></p>
+
+    <h2>Which version of you is in the database?</h2>
+    <p>Return to Maya. She now uses her university email address, but an older record might contain the email she used in high school. Another broker might identify her through a phone number.</p>
+    <p>The person is the same. The identifiers are different.</p>
+
+    <figure>
+      <div class="demo" id="demo">
+        <div class="demo-head">Try it</div>
+        <p class="demo-q">Which details should Maya include in her request?</p>
+        <div class="choices">
+          <div class="choice"><input type="checkbox" id="id-uni" data-id="uni" checked><label for="id-uni"><span class="id">maya.r@university.edu</span> <span class="kind">· current email</span></label></div>
+          <div class="choice"><input type="checkbox" id="id-old" data-id="old"><label for="id-old"><span class="id">mayar.hs@mail.com</span> <span class="kind">· high school email</span></label></div>
+          <div class="choice"><input type="checkbox" id="id-phone" data-id="phone"><label for="id-phone"><span class="id">(408) 555-0142</span> <span class="kind">· phone number</span></label></div>
+        </div>
+        <div class="brokers">
+          <div class="broker" data-key="uni"><div class="bn">Broker A holds</div><div class="holds">maya.r@university.edu</div><div class="st">Record not found</div></div>
+          <div class="broker" data-key="old"><div class="bn">Broker B holds</div><div class="holds">mayar.hs@mail.com</div><div class="st">Record not found</div></div>
+          <div class="broker" data-key="phone"><div class="bn">Broker C holds</div><div class="holds">(408) 555-0142</div><div class="st">Record not found</div></div>
+        </div>
+        <div class="tally" id="tally"></div>
+      </div>
+      <figcaption>A fictional example. Each broker can only find the record that matches a detail Maya provided.</figcaption>
+    </figure>
+
+    <p>This fictional example illustrates why matching matters. A broker must connect information in a request with information in its own records. CalPrivacy explains that different brokers may hold different details and that providing additional identifiers can improve the likelihood of finding a match. <a class="cite" href="https://privacy.ca.gov" target="_blank" rel="noopener">privacy.ca.gov</a></p>
+    <p>This creates a practical decision for users: how much information should they provide to help locate information they want removed?</p>
+    <p>A simple submission form can reduce effort, but it cannot make every record equally easy to identify.</p>
+
+    <h2>Read the response carefully</h2>
+    <p>DROP’s response categories help explain why the outcome matters as much as the request.</p>
+    <div class="outcomes">
+      <div><b>Deleted</b><span>The broker matched the person and removed information that is not exempt.</span></div>
+      <div><b>Exempted</b><span>The information can legally be retained.</span></div>
+      <div><b>Pending</b><span>Processing has not been completed.</span></div>
+      <div><b>Opted-out</b><span>No exact match. The broker keeps the data for now but cannot sell or share it.</span></div>
+      <div class="warn" style="grid-column: 1 / -1"><b>Record not found</b><span>The broker may have no information, or the details provided were not enough to locate a record.</span></div>
+    </div>
+    <p>“Record not found” requires particular care. It may mean the broker has no information about the person. It may also mean the information provided was insufficient to locate a record. “Opted-out” is another distinct outcome: the broker could not make an exact match and retains data for now, but cannot sell or share it. <a class="cite" href="https://privacy.ca.gov" target="_blank" rel="noopener">privacy.ca.gov</a></p>
+    <p>A confirmation that a request was submitted therefore answers only the first question. The next question is what each broker did with it.</p>
+
+    <h2>A useful start, with work behind it</h2>
+    <p>DROP makes a complicated privacy task more manageable. Its value is straightforward: people should not need to become experts in the data-broker industry to exercise their rights.</p>
+
+    <figure>
+      <div class="map-wrap">
+        <svg viewBox="0 0 680 300" role="img" aria-labelledby="map-title">
+          <title id="map-title">How a deletion request moves from everyday activity to an outcome</title>
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+
+          <g class="node"><rect x="10" y="40" width="130" height="64" rx="6"/><text x="75" y="66" text-anchor="middle" class="lbl">Everyday activity</text><text x="75" y="86" text-anchor="middle">browsing, shopping</text></g>
+          <g class="node"><rect x="180" y="40" width="130" height="64" rx="6"/><text x="245" y="66" text-anchor="middle" class="lbl">Broker profile</text><text x="245" y="86" text-anchor="middle">records + inferences</text></g>
+          <g class="node"><rect x="350" y="40" width="130" height="64" rx="6"/><text x="415" y="66" text-anchor="middle" class="lbl">One request</text><text x="415" y="86" text-anchor="middle">sent through DROP</text></g>
+          <g class="node key"><rect x="520" y="40" width="150" height="64" rx="6"/><text x="595" y="66" text-anchor="middle" class="lbl">Matching</text><text x="595" y="86" text-anchor="middle">do the details line up?</text></g>
+
+          <path class="edge" d="M140 72H178" marker-end="url(#ah)"/>
+          <path class="edge" d="M310 72H348" marker-end="url(#ah)"/>
+          <path class="edge" d="M480 72H518" marker-end="url(#ah)"/>
+
+          <path class="edge" d="M595 104V140H100V168" marker-end="url(#ah)"/>
+          <path class="edge" d="M265 140V168" marker-end="url(#ah)"/>
+          <path class="edge" d="M430 140V168" marker-end="url(#ah)"/>
+          <path class="edge" d="M595 140V168" marker-end="url(#ah)"/>
+
+          <g class="out"><rect x="30" y="170" width="140" height="40" rx="6"/><text x="100" y="195" text-anchor="middle">Deleted</text></g>
+          <g class="out"><rect x="195" y="170" width="140" height="40" rx="6"/><text x="265" y="195" text-anchor="middle">Exempted</text></g>
+          <g class="out"><rect x="360" y="170" width="140" height="40" rx="6"/><text x="430" y="195" text-anchor="middle">Opted-out</text></g>
+          <g class="out miss"><rect x="525" y="170" width="140" height="40" rx="6"/><text x="595" y="195" text-anchor="middle">Record not found</text></g>
+
+          <text x="10" y="250" class="note-t">Outside a DROP request: legally exempt information, and information you gave a business directly.</text>
+          <text x="10" y="272" class="note-t">After processing, brokers must keep checking for new matching information.</text>
+        </svg>
+      </div>
+      <figcaption>The path from ordinary activity to a reported outcome, and where it can stop.</figcaption>
+    </figure>
+
+    <p>Its limits also deserve attention. DROP does not erase every piece of information everywhere. Exemptions apply, and information given directly to a business falls outside the scope of a DROP request. Brokers must continue checking for new matching information after initial processing. <a class="cite" href="https://privacy.ca.gov" target="_blank" rel="noopener">privacy.ca.gov</a></p>
+    <p>For California residents, the practical starting point is the <a href="https://privacy.ca.gov" target="_blank" rel="noopener">official DROP website</a>. After submitting a request, save the DROP ID privately and review the reported outcomes.</p>
+    <p>The larger question is whether people can understand those outcomes. A privacy tool becomes more meaningful when users can see what was found, what was removed, and what remains unresolved.</p>
+  </div>
+
+  <div class="tags"><span>Privacy</span><span>Data Brokers</span><span>California</span><span>Technology</span></div>
+
+  <div class="endnote">
+    Sources
+    <ol>
+      <li>California Privacy Protection Agency, “Delete Request and Opt-out Platform,” privacy.ca.gov, 2026.</li>
+      <li>E. van Kempen, I. Bagayatkar, P. Frolikov, C. Georgiou, and G. Tsudik, “Consumer Beware! Exploring Data Brokers’ CCPA Compliance,” arXiv:2506.21914, 2025.</li>
+    </ol>
+  </div>
+</article>
+</main>
+
+<script>
+(function () {
+  var boxes = document.querySelectorAll('#demo input[type=checkbox]');
+  var brokers = document.querySelectorAll('#demo .broker');
+  var tally = document.getElementById('tally');
+  function update() {
+    var picked = {}; var shared = 0;
+    boxes.forEach(function (b) { if (b.checked) { picked[b.dataset.id] = true; shared++; } });
+    var found = 0;
+    brokers.forEach(function (br) {
+      var hit = !!picked[br.dataset.key];
+      br.classList.toggle('hit', hit);
+      br.querySelector('.st').textContent = hit ? 'Matched, deleted' : 'Record not found';
+      if (hit) found++;
+    });
+    tally.innerHTML = '<b>' + found + ' of 3</b> records found. Maya shared <b>' + shared + '</b> detail' + (shared === 1 ? '' : 's') + ' to get there.';
+  }
+  boxes.forEach(function (b) { b.addEventListener('change', update); });
+  update();
+})();
+</script>
+</body>
+</html>
